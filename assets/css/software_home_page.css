@@ -1,0 +1,31 @@
+.grey-btn {
+  width:100%; /* or whatever width you want. */
+  max-width:350px; /* or whatever width you want. */
+  display: inline-block;
+  text-align:center;
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 24px;
+  background: #e6e6e6;
+  padding: 70px 40px 70px 40px;
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+.grey-btn:hover {
+  background: #c7c7c7;
+  text-decoration: none;
+}
+
+/* nav bar search box - drop down menu button */
+.navbar .navbar-search .dropdown-menu { min-width: 100px; }
+.dropdown-menu .label-icon { margin-left: 5px; }
+.btn-outline {
+    background-color: transparent;
+    color: inherit;
+    transition: all .5s;
+}
+

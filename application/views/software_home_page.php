@@ -128,6 +128,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     //--><!]]>
     </script>
     
+    <script type="text/javascript" href="<?php echo base_url('assets/css/software_home_page.js');?>"></script>
+
     <!-- IE Fix for HTML5 Tags -->
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -235,7 +237,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>  
               </div>
           
-          </div>  	
+          </div>
+   
+    <!-- Newly added CSS -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/software_home_page.css');?>">
         </header>
         <!-- end header --> 
     
@@ -262,7 +267,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="row">
                     
                                 
-                        <div class="col-md-9">
+              <div class="row">
+                        <div class="col-md-12">                     
                           
                                                                      
                             <div class="region region-content">
@@ -271,7 +277,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         
       <div class="content">
         
-     
+      
         <div class="description">    <div class="field field-name-field-desc field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>ITSC provides a wide range of software, mostly free of charge, for Staff and/or Students use, ranging from general desktop applications like Microsoft Office, to specialised academic softwares. These software are pre-installed in offices/ lab areas for use, or are available for individuals to download.</p>
     </div></div></div>    </div> 
     
@@ -283,7 +289,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
     
     <p></p><div class="field field-name-field-content field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>We will also help to negotiate with vendors to obtain volume discounted licenses on various software that are commonly required by departments. So, do remember to check out our “Coordinated Purchases” link below.</p>
-    <ul><li>
+    
+    <div class="software-search hidden-xs">                       
+    <form onsubmit="if(this.search_block_form.value=='Search'){ alert('Please enter a search'); return false; }" action="/services/general-it-services/procurement-licensing" method="post" id="search-block-form" accept-charset="UTF-8"><div>
+    <div class="input-group"> 
+      <input title="Enter the terms you wish to search for." class="form-control search form-text" onblur="if (this.value == '') {this.value = 'Search';}" onfocus="if (this.value == 'Search') {this.value = '';}" placeholder="Software Search" type="text" id="edit-search-block-form--3" name="search_block_form" value="" size="40" maxlength="128">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+              <i class="fa fa-search"></i>
+          </button>
+        </span>
+      <input type="hidden" name="form_build_id" value="form-dHCtETe_j3hbcKQDl_nsHqysNwH4OD8gfkiPJY2KebU">
+      <input type="hidden" name="form_id" value="search_block_form">
+    </div>
+    </div>
+    </form>				    
+    </div>
+    </div>
+
+
+    <div class="row">
+                        <div class="col-md-12">
+                          
+    <p></p>
+    <a href="#" class="grey-btn">List of Common Software</a> 
+    <a href="#" class="grey-btn">Software by Location</a>
+    <a href="#" class="grey-btn">Software by Category</a></p></div><div>
+
+    
+    <!--<ul><li>
             <a href="/services/general-it-services/procurement-licensing/download/">Application Setup Advisor</a></li>
         <li>
             <a href="/services/general-it-services/procurement-licensing/download-window-installer">Download Windows Installer</a></li>
@@ -293,12 +327,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a href="/services/general-it-services/procurement-licensing/loan-software-media/">Loan Software Media</a></li>
         <li>
             <a href="http://itsc.ust.hk/services/general-it-services/procurement-licensing/common-software-list">List of Common Software</a></li>
-    </ul></div></div></div><p></p>
+    </ul></div></div><p></p>-->
     
     
     
     
-    <hr>
+  
       </div>
     </div>
       </div>
@@ -307,6 +341,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   
                                         <div class="col-md-3">
                           <div class="region region-sidebar-right">
+                          <hr>
         
     <div id="block-menu-menu-general-it-services" class="block block-menu">
     
