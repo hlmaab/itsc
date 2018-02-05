@@ -128,7 +128,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     //--><!]]>
     </script>
     
-    <script type="text/javascript" href="<?php echo base_url('assets/css/software_home_page.js');?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/css/software_home_page.js');?>"></script>
 
     <!-- IE Fix for HTML5 Tags -->
     <!--[if lt IE 9]>
