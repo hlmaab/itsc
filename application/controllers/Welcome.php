@@ -23,5 +23,6 @@ class Welcome extends CI_Controller {
 		$this->load->database();
 		//$this->load->view('welcome_message');
 		$this->load->view('software_home_page');
+		
 	}
 }
