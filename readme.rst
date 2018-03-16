@@ -1,6 +1,11 @@
 ###################
-itsc-software-license
+ITSC-software-license
 ###################
+
+- software home page
+- software by category/ location page
+- list of common software page
+- infomation page for a software
 
 ###################
 What is CodeIgniter
