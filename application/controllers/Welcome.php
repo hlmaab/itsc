@@ -22,6 +22,13 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->database();
 		//$this->load->view('welcome_message');
-		$this->load->view('software_home_page');
+		//$this->load->view('software_home_page');
+
+		$data = array(
+			array('category1', 'link1'),
+			array('category2', 'link2')
+	   );
+
+		$this->load->view('software_by_category', $data);
 	}
 }
