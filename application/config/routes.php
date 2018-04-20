@@ -53,12 +53,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = "search";
 $route['404_override'] = 'error';
 
-$route['result/(:any)']='search/result/$1';
-$route['common'] = 'search/software';
-$route['locations'] = 'search/sort_list/locations';
+//$route['result/(:any)']='search/result/$1';
+$route['common'] = 'search/sort_list';
+$route['locations'] = 'search/sort_list/location';
 $route['category'] = 'search/sort_list/category';
-$route['software/(:any)/(:any)']='search/software/$1/$2';
 $route['keyword'] = 'search/keyword';
+$route['detail/(:any)']='search/detail/$1';
+$route['notFound']='search/notFound';
+$route['item/(:any)']='search/item/$1';
+
+$route['cias']='user';
+$route['manage']='information/info';
+$route['manage/(:num)']='information/info/$1';
+$route['addSoftware']='information/info/addSoftware';
+
+$route['welcome']='welcome';
 
 
 /*********** USER DEFINED ROUTES *******************/

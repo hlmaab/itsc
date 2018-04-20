@@ -104,9 +104,9 @@
               </a>
             </li>
             <li class="treeview">
-              <a href="#" >
+              <a href="<?php echo base_url(); ?>manage" >
                 <i class="fa fa-plane"></i>
-                <span>New Task</span>
+                <span>Management</span>
               </a>
             </li>
             <li class="treeview">

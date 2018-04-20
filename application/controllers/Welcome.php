@@ -24,11 +24,11 @@ class Welcome extends CI_Controller {
 		//$this->load->view('welcome_message');
 		//$this->load->view('software_home_page');
 
-		$data = array(
-			array('category1', 'link1'),
-			array('category2', 'link2')
+		$data['result'] = array(
+					'0'=>array('name'=>1,'img'=>'test'),
+					'1'=>array('name'=>2,'img'=>'test2')
 	   );
 
-		$this->load->view('software_by_category', $data);
+		$this->load->view('search/software_by_category', $data);
 	}
 }

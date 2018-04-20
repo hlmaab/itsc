@@ -21,56 +21,55 @@ $this->input->post('name') <== The name refer to the 'name' attribute of the tex
 		
 		public function index()
 		{
-			$this->load->view('search/index');	//Default action
+			$this->load->view('search/software_home_page');	//Default action
 		}
 		
-		
+		/***********
+			for searching bar
+		************/
 		public  function keyword()
 		{
-			$name=$this->input->post('name');
+			$name=$this->input->get('name');
 			
+			$data['type']="Result";
 			if($name!="")
 				$data['result']=$this->software->get_info(urldecode($name)); //Get the data that match the name
 			else
 				redirect('');	//Nothing change when nothing has been input
 			
-			if($data['result']=="")
-				$this->software('name',urldecode($name));	//if now data matched, try matching similiar data
+			if(sizeof($data['result'])==0)
+				redirect('/notFound');	//direct to error page if nothing found
 			else
-			$this->load->view('search/result',$data);		//if found exact data,display
+			$this->load->view('search/common_software',$data);		//if found exact data,display
+			//print_r($data['result']);
 		}
 		
-		public function result($name)
-		{
-			$data['result']=$this->software->get_info(urldecode($name));	//The the data with exact name
-			$this->load->view('search/result',$data);
-		}
-		
-		 function software($type=NULL,$value=NULL)
-		{
-			if($type==NULL && $value==NULL)
-				$data['result']=$this->software->get_result();
-			else
-			{
-				$crit=array(
-						'value'=>urldecode($value),  //parse URL spacial character 
-						'type'=>$type
-						);
-						
-				$data['result']=$this->software->get_result($crit);	//Find the simliar data
-			}
-				if(empty($data['result']))					//If no result back to index
-					redirect('');
-				else
-					$this->load->view('search/list',$data);
-
-		}
-		
-		public function sort_list($type='software')	
+		public function sort_list($type="common")	
 		{ 
 			$data['result']=$this->software->get_list($type);	//Create the select list
 			$data['type']=$type;
-			$this->load->view('search/preList',$data);
+			$this->load->view('search/common_software',$data);
+		}
+		
+		public function item($name)
+		{
+			$data['type']="list";
+			$data['result']=$this->software->get_item(urldecode($name));
+			
+			$this->load->view('search/common_software',$data);
+			
+		}
+		
+		public function detail($name)
+		{
+			$data['type']='software';
+			$data['result']=$this->software->get_result(urldecode($name));
+			$this->load->view('search/software_page',$data);
+		}
+		
+		function notFound()
+		{
+			$this->load->view('search/software_not_found');
 		}
 		
 	}

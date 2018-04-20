@@ -1,6 +1,6 @@
 <?php echo validation_errors(); ?>
 
-<?php echo form_open('/keyword'); ?>
+<?php echo form_open('keyword'); ?>
 	<input type="input" name="name" value=""></textarea>
 	
 	<input type="submit" name="submit" value="Submit" />

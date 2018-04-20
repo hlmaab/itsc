@@ -84,8 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             @import url("http://itsc.ust.hk/sites/itscprod.sites.ust.hk/files/css_injector/css_injector_22.css?ouij24");
         </style>
         <script async="" src="//www.google-analytics.com/analytics.js"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script type="text/javascript">
             <!--//--><![CDATA[//><!--
             window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.10/jquery.min.js'>\x3C/script>")
@@ -301,7 +300,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             //--><!]]>
         </script>
         <!-- Newly added javascript for homepage @Alice -->
-        <script type="text/javascript" src="<?php echo base_url('assets/js/software_home_page.js');?>"></script>
+ <!--        <script type="text/javascript" src="<?php echo base_url('assets/js/software_home_page.js');?>"></script> -->
+
 
         <!-- IE Fix for HTML5 Tags -->
         <!--[if lt IE 9]>
@@ -342,7 +342,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-481 node-type-content-page i18n-en " style="" >
 
         <div class="body">
-            <header id="header" data-plugin-options="{&quot;stickyEnabled&quot;: true, &quot;stickyEnableOnBoxed&quot;: true, &quot;stickyEnableOnMobile&quot;: true, &quot;stickyStartAt&quot;: 57, &quot;stickySetTop&quot;: &quot;-57px&quot;, &quot;stickyChangeLogo&quot;: true}" style="min-height: 236px; display: block;">
+            <header id="header" data-plugin-options="{&quot;stickyEnabled&quot;: true, &quot;stickyEnableOnBoxed&quot;: true, &quot;stickyEnableOnMobile&quot;: true, &quot;stickyStartAt&quot;: 57, &quot;stickySetTop&quot;: &quot;-57px&quot;, &quot;stickyChangeLogo&quot;: true}" style="min-height: 23px; display: block;">
                 <div class="header-body" style="top: 0px;">
                     <div class="header-container container">
 
@@ -420,7 +420,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <ul class="nav nav-pills nav-main" id="mainMenu">
                                     <li><a href="/" title="">Home</a></li>
                                     <li><a href="/about-itsc">About Us</a></li>
-                                    <li class="dropdown 4402 active"><a href="/services" title="" class="active-trail dropdown-toggle disabled">Service Catalog<i class="fa fa-caret-down"></i></a>
+                                    <li class="dropdown 4402 active"><a href="/services" title="" class="active-trail dropdown-toggle disabled">Service Catalog </a>
                                         <ul class="dropdown-menu">
                                             <li class="dropdown-submenu active"><a href="/services/general-it-services" class="active-trail">General IT Services<i class="fa fa-caret-down"></i></a>
                                                 <ul class="dropdown-menu">
@@ -621,7 +621,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown 4747"><a href="/it-policies-guidelines" class="dropdown-toggle disabled">IT Policies<i class="fa fa-caret-down"></i></a>
+                                    <li class="dropdown 4747"><a href="/it-policies-guidelines" class="dropdown-toggle disabled">IT Policies</i></a>
                                         <ul class="dropdown-menu">
                                             <li class="dropdown-submenu"><a href="/it-policies-guidelines" title="">General<i class="fa fa-caret-down"></i></a>
                                                 <ul class="dropdown-menu">
@@ -664,7 +664,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </ul>
                                     </li>
                                     <li><a href="/cyber-security" title="">Cybersecurity</a></li>
-                                    <li class="dropdown 4798"><a href="/publications" title="" class="dropdown-toggle disabled">Publications<i class="fa fa-caret-down"></i></a>
+                                    <li class="dropdown 4798"><a href="/publications" title="" class="dropdown-toggle disabled">Publications</a>
                                         <ul class="dropdown-menu">
                                             <li><a href="/publications/channel">Channel</a></li>
                                             <li><a href="/publications/university-communications-directory">University Communications Directory</a></li>
@@ -679,11 +679,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 </div>
                 
-                <!-- Newly added CSS for homepage @Alice -->
-                <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/software_home_page.css');?>">
+                <!-- Newly added CSS for software_page @Calvin -->
+                <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/software_page.css');?>">
+
 
             </header>
             <!-- end header -->
+
 
             <div role="main" class="main">
 
@@ -704,7 +706,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         <div class="row">
                             <div class="col-md-12">
-                                <h1>Software by Category</h1>
+                                <h1><?php echo $result['name'];?></h1>
                             </div>
                         </div>
                     </div>
@@ -714,24 +716,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="container">
                         <div class="row">
 
+                            <!-- Software Logo -->
+                            <div class="software-logo">
+                                <img src="<php echo $result['img'];?>">
+                            </div>
 
 
-                                <!--Software by Category @Alice-->
+                            <!-- Table for descriptions -->
 
-                                <div id="myDynamicTable">
-                                </div>
-                                <script type="text/javascript" src="<?php echo base_url('assets/js/software_home_page.js');?>"></script>
-                                <script>
-                                    var categories = <?php echo json_encode( $categories ) ?>;
-                                    addCell(categories['category1'][0],categories['category1'][1] ); 
-                                    addCell(categories['category2'][0],categories['category2'][1] ); 
-                                    addCell(categories['category1'][0],categories['category1'][1] ); 
-                                    addCell(categories['category2'][0],categories['category2'][1] ); 
-                                    addCell(categories['category1'][0],categories['category1'][1] ); 
+                            <div class="description-table">   
+                              <table class="table table-striped">
+
+                                <tbody class="table">
+                                  <tr>
+                                    <td class="left ">Description</td>
+                                    <td><?php echo $result['information'];?></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="left">Version</td>
+                                    <td><?php echo $result['version'];?></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            
+                            <div id="subscribe-button"></div>
+
+                                <script type="text/javascript" src="<?php echo base_url('assets/js/software_page.js');?>"></script>
+              
+                                <script type="text/javascript">
+                                    var sub = "<?php echo $result['subscribe'];?>";
+                                    if (sub=='1')
+                                        addSubscribeButton();
                                 </script>
-
-
-
+        
+                            
                             <!--<div class="col-md-3">
                                 <div class="region region-sidebar-right">
 

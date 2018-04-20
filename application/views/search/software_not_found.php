@@ -84,8 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             @import url("http://itsc.ust.hk/sites/itscprod.sites.ust.hk/files/css_injector/css_injector_22.css?ouij24");
         </style>
         <script async="" src="//www.google-analytics.com/analytics.js"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script type="text/javascript">
             <!--//--><![CDATA[//><!--
             window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.10/jquery.min.js'>\x3C/script>")
@@ -302,6 +301,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </script>
         <!-- Newly added javascript for homepage @Alice -->
         <script type="text/javascript" src="<?php echo base_url('assets/js/software_home_page.js');?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/software_not_found.js');?>"></script>
 
         <!-- IE Fix for HTML5 Tags -->
         <!--[if lt IE 9]>
@@ -339,7 +339,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- End user defined CSS -->
     </head>
 
-    <body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-481 node-type-content-page i18n-en " style="" >
+    <body onload="redirect()" class="html not-front not-logged-in no-sidebars page-node page-node- page-node-481 node-type-content-page i18n-en " style="" >
 
         <div class="body">
             <header id="header" data-plugin-options="{&quot;stickyEnabled&quot;: true, &quot;stickyEnableOnBoxed&quot;: true, &quot;stickyEnableOnMobile&quot;: true, &quot;stickyStartAt&quot;: 57, &quot;stickySetTop&quot;: &quot;-57px&quot;, &quot;stickyChangeLogo&quot;: true}" style="min-height: 236px; display: block;">
@@ -681,7 +681,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 
                 <!-- Newly added CSS for homepage @Alice -->
                 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/software_home_page.css');?>">
-
+                <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/software_not_found.css');?>">
             </header>
             <!-- end header -->
 
@@ -704,7 +704,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         <div class="row">
                             <div class="col-md-12">
-                                <h1>Software by Category</h1>
+                                <h1>Software Licensing &amp; Distribution</h1>
                             </div>
                         </div>
                     </div>
@@ -716,19 +716,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-                                <!--Software by Category @Alice-->
+                                                            <!-- Search bar for software @Alice -->
+                                                            
+                                                            <div class="col-md-12">
+                                                              <div id="software-not-found"><h4 >Software Not Found!<h4></div>
+                                                              </div>
 
-                                <div id="myDynamicTable">
-                                </div>
-                                <script type="text/javascript" src="<?php echo base_url('assets/js/software_home_page.js');?>"></script>
-                                <script>
-                                    var categories = <?php echo json_encode( $categories ) ?>;
-                                    addCell(categories['category1'][0],categories['category1'][1] ); 
-                                    addCell(categories['category2'][0],categories['category2'][1] ); 
-                                    addCell(categories['category1'][0],categories['category1'][1] ); 
-                                    addCell(categories['category2'][0],categories['category2'][1] ); 
-                                    addCell(categories['category1'][0],categories['category1'][1] ); 
-                                </script>
+                                                              
 
 
 

@@ -1,0 +1,13 @@
+.sub-button {
+    background-color: #008CBA;
+    color: rgb(250, 249, 249); 
+    margin-bottom:7px;
+    border-radius:25px;
+    
+}
+
+.sub-button:hover {
+    background-color: rgb(146, 202, 221);
+    color: white;
+    
+}

@@ -1,0 +1,25 @@
+/*software table*/
+.software-floating-box {
+  display: inline-block;
+  width: 250px;
+  height: 200px;
+  margin: 15px;
+  border: 0px;
+  text-align: center;
+  /*border: 1px solid rgb(207, 207, 207);*/  
+
+}
+
+
+.image-in-block{
+
+	width: 150px;
+	height: 80%;
+	border: 0px;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
+	border-style: none;
+}
+

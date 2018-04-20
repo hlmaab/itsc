@@ -722,12 +722,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </div>
                                 <script type="text/javascript" src="<?php echo base_url('assets/js/software_home_page.js');?>"></script>
                                 <script>
-                                    var categories = <?php echo json_encode( $categories ) ?>;
-                                    addCell(categories['category1'][0],categories['category1'][1] ); 
-                                    addCell(categories['category2'][0],categories['category2'][1] ); 
-                                    addCell(categories['category1'][0],categories['category1'][1] ); 
-                                    addCell(categories['category2'][0],categories['category2'][1] ); 
-                                    addCell(categories['category1'][0],categories['category1'][1] ); 
+								
+									<?php foreach ($result as $type){ ?>
+                                    var categories = <?php echo json_encode( $type ) ?>;
+                                    addCell(categories['name'],categories['img']); 
+									<?php } ?>
                                 </script>
 
 
