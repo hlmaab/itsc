@@ -716,7 +716,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-                                                            <!-- Search bar for software @Alice -->
+                                                            <!-- software not found @Alice -->
                                                             
                                                             <div class="col-md-12">
                                                               <div id="software-not-found"><h4 >Software Not Found!<h4></div>

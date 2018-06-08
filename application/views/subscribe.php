@@ -7,15 +7,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="shortcut icon" href="http://itsc.ust.hk/sites/itscprod.sites.ust.hk/files/itsc-icon.png" type="image/png">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Software Licensing &amp; Distribution | ITSC</title>
         <!-- Call bootstrap.css before $scripts to resolve @import conflict with respond.js -->
         <link rel="stylesheet" href="http://itsc.ust.hk/sites/all/themes/Porto/vendor/bootstrap/bootstrap.css">
-        
-        
-        
-
         <style type="text/css" media="all">
             @import url("http://itsc.ust.hk/modules/system/system.base.css?ouij24");
             @import url("http://itsc.ust.hk/modules/system/system.menus.css?ouij24");
@@ -305,8 +300,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             //--><!]]>
         </script>
         <!-- Newly added javascript for homepage @Alice -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-        
+ <!--        <script type="text/javascript" src="<?php echo base_url('assets/js/software_home_page.js');?>"></script> -->
+
 
         <!-- IE Fix for HTML5 Tags -->
         <!--[if lt IE 9]>
@@ -684,12 +679,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 </div>
                 
-                <!-- Newly added CSS for homepage @Alice -->
-                <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/software_home_page.css');?>">
-                <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+                <!-- Newly added CSS for software_page @Calvin -->
+                <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/software_page.css');?>">
+
 
             </header>
             <!-- end header -->
+
 
             <div role="main" class="main">
 
@@ -702,6 +698,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <li><a href="/">Home</a></li>
                                         <li><a href="/services">Service Catalog</a></li>
                                         <li><a href="/services/general-it-services">General IT Services</a></li>
+                                        <li><a href="/services/general-it-services/software_home_page">Software Licensing &amp; Distribution</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -709,7 +706,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         <div class="row">
                             <div class="col-md-12">
-                                <h1>Software Licensing &amp; Distribution</h1>
+                                <h1><?php echo $result['name'];?></h1>
                             </div>
                         </div>
                     </div>
@@ -719,304 +716,208 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="container">
                         <div class="row">
 
+                            <!-- Software Logo -->
+                            <div class="software-logo">
+                                <img src="<php echo $result['img'];?>">
+                            </div>
 
-                            <div class="row">
-                                <div class="col-md-12">
+
+                            <!-- Table for descriptions -->
+
+                            <div class="description-table">   
+                              <table class="table table-striped">
+
+                                <tbody class="table">
+                                  <tr>
+                                    <td class="left ">Description</td>
+                                    <td><?php echo $result['information'];?></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="left">Version</td>
+                                    <td><?php echo $result['version'];?></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            
+                            <div id="subscribe-button"></div>
+
+                                <script type="text/javascript" src="<?php echo base_url('assets/js/software_page.js');?>"></script>
+              
+                                <script type="text/javascript">
+                                    var sub = "<?php echo $result['subscribe'];?>";
+                                    if (sub=='1')
+                                        addSubscribeButton();
+                                </script>
+        
+                            
+                            <!--<div class="col-md-3">
+                                <div class="region region-sidebar-right">
+
+                                    <div id="block-menu-menu-general-it-services" class="block block-menu">
+
+                                        <h4>General IT Services</h4>
+
+                                        <div class="content">
+                                            <ul class="menu">
+                                                <li class="first leaf"><a href="/services/general-it-services/user-account" title="">User Account</a></li>
+                                                <li class="leaf"><a href="/services/general-it-services/wifi" title="">Wi-Fi Access</a></li>
+                                                <li class="leaf"><a href="/services/general-it-services/communication-collaboration" title="">Productivity &amp; Collaboration Tools</a></li>
+                                                <li class="leaf"><a href="/services/general-it-services/portal" title="">Portal</a></li>
+                                                <li class="leaf active-trail"><a href="/services/general-it-services/procurement-licensing" title="" class="active-trail active">Software Licensing &amp; Distribution</a></li>
+                                                <li class="leaf"><a href="/services/general-it-services/looking-for-a-person-or-a-place" title="">Looking for a Person or a Place</a></li>
+                                                <li class="last leaf"><a href="/services/general-it-services/campus-accessibility" title="">Campus Accessibility</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>-->
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
 
-                                    <div class="region region-content">
-                                        <div id="block-system-main" class="block block-system">
+            <footer id="footer">
+                <div class="container main-footer">
+                    <div class="row">
 
+
+                        <div class="col-md-3">
+                            <div class="region region-footer-1">
+                                <div class="region region-footer-1">
+                                    <div class="region region-footer-1">
+                                        <div id="block-block-44" class="block block-block">
+
+                                            <h2>Consultation</h2>
 
                                             <div class="content">
+                                                <ul class="list-unstyled">
+                                                    <li><i class="icon icon-map-marker">&nbsp;</i><strong>Student Consultation</strong>
+                                                        <ul style="list-style-type:none">
+                                                            <li style="margin-left:-25px">Barn B (Rm 1101),</li>
+                                                            <li style="margin-left:-25px">Academic Concourse</li>
+                                                            <li style="margin-left:-25px"><i class="icon icon-envelope">&nbsp;</i>&nbsp;<a href="mailto:cchelp@ust.hk">cchelp@ust.hk</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="region region-footer-2">
+                                <div class="region region-footer-2">
+                                    <div id="block-block-50" class="block block-block">
 
 
-                                                <div class="description">
-                                                    <div class="field field-name-field-desc field-type-text-long field-label-hidden">
-                                                        <div class="field-items">
-                                                            <div class="field-item even">
-                                                                <p>ITSC provides a wide range of software, mostly free of charge, for Staff and/or Students use, ranging from general desktop applications like Microsoft Office, to specialised academic softwares. These software are pre-installed in offices/ lab areas for use, or are available for individuals to download.</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                        <div class="content">
+                                            <ul class="list-unstyled">
+                                                <li>
+                                                    <i class="icon icon-map-marker">&nbsp;</i><strong>Staff Consultation</strong>
+                                                    <ul style="list-style-type:none">
+                                                        <li style="margin-left:-25px">
+                                                            <a href="/services/user-consultation-and-training-services/consultation/itsc-service-desk">Service Desk</a>,&nbsp;Rm 2021, Lift 2</li>
+                                                        <li style="margin-left:-25px">
+                                                            <i class="icon icon-phone">&nbsp;</i> 2358 6200</li>
+                                                        <li style="margin-left:-25px">
+                                                            <i class="icon icon-envelope">&nbsp;</i>&nbsp;<a href="mailto:cchelp@ust.hk">cchelp@ust.hk</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="region region-footer-3">
+                                <div class="region region-footer-3">
+                                    <div id="block-block-45" class="block block-block">
+
+                                        <h2>Suggestion &amp; Complaints</h2>
+
+                                        <div class="content">
+                                            <p><a href="mailto:cclisten@ust.hk">cclisten@ust.hk</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="region region-footer-4">
+                                <div class="region region-footer-4">
+                                    <div id="block-block-46" class="block block-block">
+
+                                        <h2>FAQ</h2>
+
+                                        <div class="content">
+                                            <p><a href="http://itsc.ust.hk/kb/" target="new">ITSC Knowledge Base</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="footer-copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
 
 
+                            </div>
+                            <div class="col-md-6">
 
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
 
-                                                <p></p>
-                                                <div class="field field-name-field-content field-type-text-long field-label-hidden">
-                                                    <div class="field-items">
-                                                        <div class="field-item even">
-                                                            <p>We will also help to negotiate with vendors to obtain volume discounted licenses on various software that are commonly required by departments. So, do remember to check out our “Coordinated Purchases” link below.</p>
-
-
-                                                            <!-- Search bar for software @Alice -->
-                                                            
-                                                            <div class="col-md-12">
-                                                            <?php echo form_open('keyword',array('method'=>'get')); ?>
-                                                            
-                                                                    <div class="input-group " id="adv-search">
-                                                                        
-                                                                        <div class="input-group-btn input-group-lg">
-                                                                            <div class="btn-group" role="group">
-                                                                                <div class="dropdown dropdown-lg">
-                                                                                <button type="button" class="btn dropdown-toggle btn-lg more-icon" data-toggle="dropdown" aria-expanded="false" style="width: 100px; height: 34px; padding-top: 4px;"><span class="more-word">More</span><i class="fas fa-sort-down"></i></button>
-                                                                                    <div class="dropdown-menu dropdown-menu-left" role="menu">
-                                                                                        <form class="form-horizontal" role="form">
-                                                                                            <div class="form-group">
-                                                                                                <label for="location-filter">Location</label>
-                                                                                                <select class="form-control" name="selectedLocation">                           <!--return variable: selectedLocation-->
-                                                                                                    <option value="All" selected>All</option>
-                                                                                                    <option value="Barn A" >Barn A</option>
-                                                                                                    <option value="Barn B">Barn B</option>
-                                                                                                    <option value="Lab 4210">Lab 4210</option>
-                                                                                                    <option value="Lab 4213">Lab 4213</option>
-                                                                                                    <option value="Lab 4214">Lab 4214</option>
-                                                                                                </select>
-                                                                                            </div>
-                                                                                            <div class="form-group">
-                                                                                                <label for="cateogry-filter" >Cateogry</label> 
-                                                                                                    <select class="form-control"  name="selectedCategory">                      <!--return variable: selectedCategory-->
-                                                                                                        <option value="All" selected>All</option>
-                                                                                                        <option value="Common software" selected>Common software</option>
-                                                                                                        <option value="Academic">Academic</option>
-                                                                                                        <option value="Programming">Programming</option>
-                                                                                                </select>
-                                                                                            </div>
-                                                                                            <!-- <div class="form-group"> 
-                                                                                                <label for="contain">Contains exactly</label>
-                                                                                                <input class="form-control" type="text" />
-                                                                                            </div> -->
-                                                                                            
-                                                                                        
-                                                                                        </form>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <input type="text" class="form-control" placeholder="Search for the software" name="name"/>             <!-- @Wing return the user input as variable "name" -->
-                                                                                <div class= "right-corner"><button type="button" class="btn btn-primary search-icon" style="height:34px"><i class="fas fa-search"></i>
-</button></div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                             
-                                                             </div>
-                                                            <p></p>
-                                                            <!-- Buttons @Alice -->
-                                                            <div class="col-md-12">
-                                                                <div class="button-container">
-                                                                    
-                                                                        <div  class="floating-btn">
-                                                                        <a href="<?php base_url(); ?>common" class="three-btn">List of Common Software</a>
-                                                                        </div>
-
-                                                                        <div  class="floating-btn">
-                                                                        <a href="<?php base_url(); ?>locations" class="three-btn">Software by Location</a>
-                                                                        </div>
-                                                                        
-                                                                        <div  class="floating-btn">
-                                                                        <a href="<?php base_url(); ?>category" class="three-btn" >Software by Category</a>
-                                                                        </div>
-                                                                    
-                                                                </div>
-                                                            <div>
         </div>
+        <script type="text/javascript" src="http://itsc.ust.hk/sites/all/themes/Porto/js/theme.js?ouij24"></script>
+        <script type="text/javascript" src="http://itsc.ust.hk/sites/all/themes/Porto/js/views/view.home.js?ouij24"></script>
+        <script type="text/javascript" src="http://itsc.ust.hk/sites/all/themes/Porto/js/theme.init.js?ouij24"></script><a class="scroll-to-top hidden-mobile" href="#"><i class="fa fa-chevron-up"></i></a>
+        <script type="text/javascript" src="http://itsc.ust.hk/modules/statistics/statistics.js?ouij24"></script>
 
 
-
-                                                                  <!-- Original home page elements
-                                                                    <ul><li>
-                                                                          <a href="/services/general-it-services/procurement-licensing/download/">Application Setup Advisor</a></li>
-                                                                      <li>
-                                                                          <a href="/services/general-it-services/procurement-licensing/download-window-installer">Download Windows Installer</a></li>
-                                                                      <li>
-                                                                          <a href="/services/general-it-services/procurement-licensing/software-procurement/">Coordinated Purchase</a></li>
-                                                                      <li>
-                                                                          <a href="/services/general-it-services/procurement-licensing/loan-software-media/">Loan Software Media</a></li>
-                                                                      <li>
-                                                                          <a href="http://itsc.ust.hk/services/general-it-services/procurement-licensing/common-software-list">List of Common Software</a></li>
-                                                                  </ul></div></div><p></p>
-                                                                  -->
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-                                                    <div class="col-md-3">
-                                                        <div class="region region-sidebar-right">
-                                                            <hr>
-
-                                                            <div id="block-menu-menu-general-it-services" class="block block-menu">
-
-                                                                <h4>General IT Services</h4>
-
-                                                                <div class="content">
-                                                                    <ul class="menu">
-                                                                        <li class="first leaf"><a href="/services/general-it-services/user-account" title="">User Account</a></li>
-                                                                        <li class="leaf"><a href="/services/general-it-services/wifi" title="">Wi-Fi Access</a></li>
-                                                                        <li class="leaf"><a href="/services/general-it-services/communication-collaboration" title="">Productivity &amp; Collaboration Tools</a></li>
-                                                                        <li class="leaf"><a href="/services/general-it-services/portal" title="">Portal</a></li>
-                                                                        <li class="leaf active-trail"><a href="/services/general-it-services/procurement-licensing" title="" class="active-trail active">Software Licensing &amp; Distribution</a></li>
-                                                                        <li class="leaf"><a href="/services/general-it-services/looking-for-a-person-or-a-place" title="">Looking for a Person or a Place</a></li>
-                                                                        <li class="last leaf"><a href="/services/general-it-services/campus-accessibility" title="">Campus Accessibility</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                    <footer id="footer">
-                                        <div class="container main-footer">
-                                            <div class="row">
-
-
-                                                <div class="col-md-3">
-                                                    <div class="region region-footer-1">
-                                                        <div class="region region-footer-1">
-                                                            <div class="region region-footer-1">
-                                                                <div id="block-block-44" class="block block-block">
-
-                                                                    <h2>Consultation</h2>
-
-                                                                    <div class="content">
-                                                                        <ul class="list-unstyled">
-                                                                            <li><i class="icon icon-map-marker">&nbsp;</i><strong>Student Consultation</strong>
-                                                                                <ul style="list-style-type:none">
-                                                                                    <li style="margin-left:-25px">Barn B (Rm 1101),</li>
-                                                                                    <li style="margin-left:-25px">Academic Concourse</li>
-                                                                                    <li style="margin-left:-25px"><i class="icon icon-envelope">&nbsp;</i>&nbsp;<a href="mailto:cchelp@ust.hk">cchelp@ust.hk</a></li>
-                                                                                </ul>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-3">
-                                                    <div class="region region-footer-2">
-                                                        <div class="region region-footer-2">
-                                                            <div id="block-block-50" class="block block-block">
-
-
-                                                                <div class="content">
-                                                                    <ul class="list-unstyled">
-                                                                        <li>
-                                                                            <i class="icon icon-map-marker">&nbsp;</i><strong>Staff Consultation</strong>
-                                                                            <ul style="list-style-type:none">
-                                                                                <li style="margin-left:-25px">
-                                                                                    <a href="/services/user-consultation-and-training-services/consultation/itsc-service-desk">Service Desk</a>,&nbsp;Rm 2021, Lift 2</li>
-                                                                                <li style="margin-left:-25px">
-                                                                                    <i class="icon icon-phone">&nbsp;</i> 2358 6200</li>
-                                                                                <li style="margin-left:-25px">
-                                                                                    <i class="icon icon-envelope">&nbsp;</i>&nbsp;<a href="mailto:cchelp@ust.hk">cchelp@ust.hk</a></li>
-                                                                            </ul>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4">
-                                                    <div class="region region-footer-3">
-                                                        <div class="region region-footer-3">
-                                                            <div id="block-block-45" class="block block-block">
-
-                                                                <h2>Suggestion &amp; Complaints</h2>
-
-                                                                <div class="content">
-                                                                    <p><a href="mailto:cclisten@ust.hk">cclisten@ust.hk</a></p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-2">
-                                                    <div class="region region-footer-4">
-                                                        <div class="region region-footer-4">
-                                                            <div id="block-block-46" class="block block-block">
-
-                                                                <h2>FAQ</h2>
-
-                                                                <div class="content">
-                                                                    <p><a href="http://itsc.ust.hk/kb/" target="new">ITSC Knowledge Base</a></p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="footer-copyright">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-
-
-                                                    </div>
-                                                    <div class="col-md-6">
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </footer>
-
-                                </div>
-                                <script type="text/javascript" src="http://itsc.ust.hk/sites/all/themes/Porto/js/theme.js?ouij24"></script>
-                                <script type="text/javascript" src="http://itsc.ust.hk/sites/all/themes/Porto/js/views/view.home.js?ouij24"></script>
-                                <script type="text/javascript" src="http://itsc.ust.hk/sites/all/themes/Porto/js/theme.init.js?ouij24"></script><a class="scroll-to-top hidden-mobile" href="#"><i class="fa fa-chevron-up"></i></a>
-                                <script type="text/javascript" src="http://itsc.ust.hk/modules/statistics/statistics.js?ouij24"></script>
-
-
-                                <div id="cboxOverlay" style="display: none;"></div>
-                                <div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;">
-                                    <div id="cboxWrapper">
-                                        <div>
-                                            <div id="cboxTopLeft" style="float: left;"></div>
-                                            <div id="cboxTopCenter" style="float: left;"></div>
-                                            <div id="cboxTopRight" style="float: left;"></div>
-                                        </div>
-                                        <div style="clear: left;">
-                                            <div id="cboxMiddleLeft" style="float: left;"></div>
-                                            <div id="cboxContent" style="float: left;">
-                                                <div id="cboxTitle" style="float: left;"></div>
-                                                <div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button>
-                                                <div id="cboxLoadingOverlay" style="float: left;"></div>
-                                                <div id="cboxLoadingGraphic" style="float: left;"></div>
-                                            </div>
-                                            <div id="cboxMiddleRight" style="float: left;"></div>
-                                        </div>
-                                        <div style="clear: left;">
-                                            <div id="cboxBottomLeft" style="float: left;"></div>
-                                            <div id="cboxBottomCenter" style="float: left;"></div>
-                                            <div id="cboxBottomRight" style="float: left;"></div>
-                                        </div>
-                                    </div>
-                                    <div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div>
-                                </div>
-
-                                <!--@Alice-->
-                                <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-                               <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-                                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+        <div id="cboxOverlay" style="display: none;"></div>
+        <div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;">
+            <div id="cboxWrapper">
+                <div>
+                    <div id="cboxTopLeft" style="float: left;"></div>
+                    <div id="cboxTopCenter" style="float: left;"></div>
+                    <div id="cboxTopRight" style="float: left;"></div>
+                </div>
+                <div style="clear: left;">
+                    <div id="cboxMiddleLeft" style="float: left;"></div>
+                    <div id="cboxContent" style="float: left;">
+                        <div id="cboxTitle" style="float: left;"></div>
+                        <div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button>
+                        <div id="cboxLoadingOverlay" style="float: left;"></div>
+                        <div id="cboxLoadingGraphic" style="float: left;"></div>
+                    </div>
+                    <div id="cboxMiddleRight" style="float: left;"></div>
+                </div>
+                <div style="clear: left;">
+                    <div id="cboxBottomLeft" style="float: left;"></div>
+                    <div id="cboxBottomCenter" style="float: left;"></div>
+                    <div id="cboxBottomRight" style="float: left;"></div>
+                </div>
+            </div>
+            <div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div>
+        </div>
     </body>
 
     </html>

@@ -92,3 +92,125 @@
   border-radius:5px;
 }*/
 
+body {
+  padding-top: 50px;
+}
+.dropdown.dropdown-lg .dropdown-menu {
+  margin-top: -1px;
+  padding: 10px 20px;
+  margin-left: 5px;
+}
+.input-group-btn .btn-group {
+  display: flex !important;
+}
+.btn-group .btn[data-toggle="dropdown"] {
+  border-radius: 0;
+  margin-left: 0px;
+}
+
+.btn-group .btn:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+
+.btn-group .btn:last-child[type="submit"] {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+
+.btn-group .btn[data-toggle="dropdown"]{
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.left-corner {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.form-horizontal .form-group{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+div.form-group .form-control[type="text"] {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.glyphicon  {
+  font-size: 20px;
+}
+
+.caret-lg {
+  border-top: 20px solid #000000;
+  border-bottom: 20px solid #000000;
+  padding-top: 3.5px;
+  padding-bottom: 3.5px;
+  font-size: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  #adv-search {
+      width: 100%;
+      margin: 0 auto;
+  }
+  .dropdown.dropdown-lg {
+      position: static !important;
+  }
+  .dropdown.dropdown-lg .dropdown-menu {
+      min-width: 500px;
+  }
+}
+
+div.form-group label{
+  color: rgb(94, 94, 94);
+  padding: 0px 20px 0px 0px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.form-control option {
+  margin: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.fa-search {
+  color: white;
+}
+.fa-sort-down {
+  color: white;
+}
+
+.more-word {
+  font-size: 13px; 
+  color: white
+}
+
+
+.more-icon {
+  background:#0088cc;
+}
+
+.more-icon:hover {
+  background:#049de9;
+}
+
+.search-icon {
+  background:#0088cc;
+}
+
+.search-icon:hover {
+  background:#049de9;
+}

@@ -5,14 +5,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!--<![endif]-->
 
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
         <link rel="shortcut icon" href="http://itsc.ust.hk/sites/itscprod.sites.ust.hk/files/itsc-icon.png" type="image/png">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Software Licensing &amp; Distribution | ITSC</title>
         <!-- Call bootstrap.css before $scripts to resolve @import conflict with respond.js -->
         <link rel="stylesheet" href="http://itsc.ust.hk/sites/all/themes/Porto/vendor/bootstrap/bootstrap.css">
-        
         
         
 
@@ -306,6 +307,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </script>
         <!-- Newly added javascript for homepage @Alice -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         
 
         <!-- IE Fix for HTML5 Tags -->
@@ -715,113 +717,193 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </section>
 
-                <div id="content" class="content full">
-                    <div class="container">
-                        <div class="row">
+																		
+<div class="container">
 
+		<div class="row">
+			<div class="title-bar">ITSC Software Subscription Form</div>
+		</div>
+		<div class="row">
+			<div class="form-content">
+				<p>Please fill out the form below completely. Missing information will cause a delay in processing your request. Your form will be processed as quickly as possible.</p>
+	
+				<p class="form-title">General Information</p>
+	
+				<div class="form-input-content">
+					<div class="form-horizontal">
+						<div class="row">
+							<label class="col-md-2">Dept/Office<span class="field-mandatory">*</span></label>
+							<div class="col-md-4"><input type="text" class="form-control" /></div>
+						</div>
+						<div class="row">
+							<label class="col-md-2">Requested By<span class="field-mandatory">*</span></label>
+							<div class="col-md-4"><input type="text" class="form-control" /></div>
+						</div>
+						<div class="row">
+								<label class="col-md-2">Ext.<span class="field-mandatory">*</span></label>
+								<div class="col-md-4"><input type="text" class="form-control" /></div>
+							</div>
+						<div class="row">
+							<label class="col-md-2">Email<span class="field-mandatory">*</span></label>
+							<div class="col-md-4"><input type="text" class="form-control" /></div>
+						</div>
+						
+						<!--<div class="row">
+					
+							  <label class="col-md-2">Date In<span class="field-mandatory">*</span></label>
+							  <div class="col-md-3">
+								<div class='input-group date' id='dateIn'>
+									<input type='text' class="form-control" />
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar"></span>
+									</span>   
+								</div>
+							  </div>   
+								 
+						</div>-->
+					</div>	
+	
+				</div>		<!-- end of 1st section -->
+	
+				<p class="form-title">Software Details</p>
+	
+				<div class="form-input-content">
+					<div class="form-horizontal">
+						<!--<div class="row">
+							<div class="col-md-12">
+								<label class="radio-inline">
+								  <input type="radio" name="inlineRadioOptions2"> Course
+								</label>
+								<label class="radio-inline">
+								  <input type="radio" name="inlineRadioOptions2"> Research
+								</label>
+								<label class="radio-inline">
+								  <input type="radio" name="inlineRadioOptions2"> Activity
+								</label>
+								<label class="radio-inline">
+								  <input type="radio" name="inlineRadioOptions2"> Special <span class="field-mandatory">*</span>
+								</label>	
+							</div>					
+						</div>-->
+	
+						<div class="row">
+	
+							<label class="col-md-2">Software Name</label>
+							<div class="col-md-5"><input type="text" class="form-control" /></div>
+	
+							<label class="col-md-2">Version <span class="input-hints">(if available)</span></label>
+							<div class="col-md-3"><input type="text" class="form-control" /></div>		
+		   
+						</div>
+					   <!-- <div class="row">
+	
+							  <label class="col-md-2">Setup Date<span class="field-mandatory">*</span></label>
+		
+							  <div class="col-md-2">
+								<div class='input-group date' id='setupDate'>
+									<input type='text' class="form-control" />
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar"></span>
+									</span>   
+								</div>
+							  </div>
+							  <label class="col-md-2">Setup Time<span class="field-mandatory">*</span></label>
+							  <div class="col-md-2">
+								<div class='input-group date' id='setupTime'>
+									<input type='text' class="form-control" />
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-time"></span>
+									</span>   
+								</div>
+							  </div>
+	
+							<label class="col-md-2">Setup Venue<span class="field-mandatory">*</span></label>
+							<div class="col-md-2"><input type="text" class="form-control" /></div>			        
+		  
+	
+						 </div>
+	
+						<div class="row">
+							  <label class="col-md-2">Dismantle Date<span class="field-mandatory">*</span></label>
+	
+								  <div class="col-md-2">
+									<div class='input-group date' id='dismantleDate'>
+										<input type='text' class="form-control" />
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>   
+									</div>
+								  </div>
+	
+								  <label class="col-md-2">Dismantle Time<span class="field-mandatory">*</span></label>
+								  <div class="col-md-2">
+									<div class='input-group date' id='dismantleTime'>
+										<input type='text' class="form-control" />
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-time"></span>
+										</span>   
+									</div>
+	
+	
+							  </div>
+	
+	
+								<label class="col-md-2">Dismantle Venue<span class="field-mandatory">*</span></label>
+								<div class="col-md-2"><input type="text" class="form-control" /></div>			        
+	
+						 </div>	-->	 
+						
+	
+						 <div class="row">
+							<label class="col-md-2">Category</label>
+							 <div class="col-md-7">	
+								 
+								<label class="radio-inline">
+								  <input type="radio" name="inlineRadioOptions2"> Academic
+								</label>
+								<label class="radio-inline">
+								  <input type="radio" name="inlineRadioOptions2"> Office
+								</label>
+								<label class="radio-inline">
+										<input type="radio" name="inlineRadioOptions2"> Programming
+								</label>
+							 </div>
+						 </div>  
+	
+						 <div class="row">
+							<label class="col-md-2">Remarks</label>	
+							 <div class="col-md-7">
+											
+								<textarea class="form-control" rows="4"></textarea>  
+							 </div>
+						 </div> 
+	
+					   </div>
+				</div>	 <!-- end of 2nd section -->						
+				</br>
+				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" class="btn btn-reset">Reset</button>
+				</br>
+				</br>
+				<hr>
+				  <small>
+					  <p>Remarks</p>
+					  <ul>
+						  <li>Should you have any questions or need any assistance from us, please call our Service Desk at Ext. 6200 or email to <a href="#" class="text-alert">cchelp@ust.hk</a></li>
+					  </ul>
+				  </small>	 
+	
+			</div> <!-- end of form content" -->
+		</div>
+	
+		<div class="row">
+			<div class="footer">
+				<p>Copyright &copy; Information Technology Services Center, HKUST</p>
+			</div>
+		</div> <!-- end of footer -->
+	
+	</div> <!-- end of container -->
 
-                            <div class="row">
-                                <div class="col-md-12">
-
-
-                                    <div class="region region-content">
-                                        <div id="block-system-main" class="block block-system">
-
-
-                                            <div class="content">
-
-
-                                                <div class="description">
-                                                    <div class="field field-name-field-desc field-type-text-long field-label-hidden">
-                                                        <div class="field-items">
-                                                            <div class="field-item even">
-                                                                <p>ITSC provides a wide range of software, mostly free of charge, for Staff and/or Students use, ranging from general desktop applications like Microsoft Office, to specialised academic softwares. These software are pre-installed in offices/ lab areas for use, or are available for individuals to download.</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-
-
-
-                                                <p></p>
-                                                <div class="field field-name-field-content field-type-text-long field-label-hidden">
-                                                    <div class="field-items">
-                                                        <div class="field-item even">
-                                                            <p>We will also help to negotiate with vendors to obtain volume discounted licenses on various software that are commonly required by departments. So, do remember to check out our “Coordinated Purchases” link below.</p>
-
-
-                                                            <!-- Search bar for software @Alice -->
-                                                            
-                                                            <div class="col-md-12">
-                                                            <?php echo form_open('keyword',array('method'=>'get')); ?>
-                                                            
-                                                                    <div class="input-group " id="adv-search">
-                                                                        
-                                                                        <div class="input-group-btn input-group-lg">
-                                                                            <div class="btn-group" role="group">
-                                                                                <div class="dropdown dropdown-lg">
-                                                                                <button type="button" class="btn dropdown-toggle btn-lg more-icon" data-toggle="dropdown" aria-expanded="false" style="width: 100px; height: 34px; padding-top: 4px;"><span class="more-word">More</span><i class="fas fa-sort-down"></i></button>
-                                                                                    <div class="dropdown-menu dropdown-menu-left" role="menu">
-                                                                                        <form class="form-horizontal" role="form">
-                                                                                            <div class="form-group">
-                                                                                                <label for="location-filter">Location</label>
-                                                                                                <select class="form-control" name="selectedLocation">                           <!--return variable: selectedLocation-->
-                                                                                                    <option value="All" selected>All</option>
-                                                                                                    <option value="Barn A" >Barn A</option>
-                                                                                                    <option value="Barn B">Barn B</option>
-                                                                                                    <option value="Lab 4210">Lab 4210</option>
-                                                                                                    <option value="Lab 4213">Lab 4213</option>
-                                                                                                    <option value="Lab 4214">Lab 4214</option>
-                                                                                                </select>
-                                                                                            </div>
-                                                                                            <div class="form-group">
-                                                                                                <label for="cateogry-filter" >Cateogry</label> 
-                                                                                                    <select class="form-control"  name="selectedCategory">                      <!--return variable: selectedCategory-->
-                                                                                                        <option value="All" selected>All</option>
-                                                                                                        <option value="Common software" selected>Common software</option>
-                                                                                                        <option value="Academic">Academic</option>
-                                                                                                        <option value="Programming">Programming</option>
-                                                                                                </select>
-                                                                                            </div>
-                                                                                            <!-- <div class="form-group"> 
-                                                                                                <label for="contain">Contains exactly</label>
-                                                                                                <input class="form-control" type="text" />
-                                                                                            </div> -->
-                                                                                            
-                                                                                        
-                                                                                        </form>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <input type="text" class="form-control" placeholder="Search for the software" name="name"/>             <!-- @Wing return the user input as variable "name" -->
-                                                                                <div class= "right-corner"><button type="button" class="btn btn-primary search-icon" style="height:34px"><i class="fas fa-search"></i>
-</button></div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                             
-                                                             </div>
-                                                            <p></p>
-                                                            <!-- Buttons @Alice -->
-                                                            <div class="col-md-12">
-                                                                <div class="button-container">
-                                                                    
-                                                                        <div  class="floating-btn">
-                                                                        <a href="<?php base_url(); ?>common" class="three-btn">List of Common Software</a>
-                                                                        </div>
-
-                                                                        <div  class="floating-btn">
-                                                                        <a href="<?php base_url(); ?>locations" class="three-btn">Software by Location</a>
-                                                                        </div>
-                                                                        
-                                                                        <div  class="floating-btn">
-                                                                        <a href="<?php base_url(); ?>category" class="three-btn" >Software by Category</a>
-                                                                        </div>
-                                                                    
-                                                                </div>
-                                                            <div>
-        </div>
 
 
 
@@ -837,7 +919,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                                       <li>
                                                                           <a href="http://itsc.ust.hk/services/general-it-services/procurement-licensing/common-software-list">List of Common Software</a></li>
                                                                   </ul></div></div><p></p>
-                                                                  -->
+                                                                  
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -871,7 +953,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             </div>
                                         </div>
 
-                                    </div>
+                                    </div>-->
 
 
                                     <footer id="footer">
@@ -1014,9 +1096,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </div>
 
                                 <!--@Alice-->
-                                <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-                               <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-                                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+                                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+                                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 
     </html>
