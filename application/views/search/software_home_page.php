@@ -795,7 +795,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                                                     </div>
                                                                                 </div>
                                                                                 <input type="text" class="form-control" placeholder="Search for the software" name="name"/>             <!-- @Wing return the user input as variable "name" -->
-                                                                                <div class= "right-corner"><button type="button" class="btn btn-primary search-icon" style="height:34px"><i class="fas fa-search"></i>
+                                                                                <div class= "right-corner"><button type="submit" class="btn search-icon" style="height:34px"><i class="fas fa-search"></i>
 </button></div>
                                                                             </div>
                                                                         </div>
