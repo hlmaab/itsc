@@ -780,7 +780,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                                                                 <label for="cateogry-filter" >Cateogry</label> 
                                                                                                     <select class="form-control"  name="selectedCategory">                      <!--return variable: selectedCategory-->
                                                                                                         <option value="All" selected>All</option>
-                                                                                                        <option value="Common software" selected>Common software</option>
+                                                                                                        <option value="Common software">Common software</option>
                                                                                                         <option value="Academic">Academic</option>
                                                                                                         <option value="Programming">Programming</option>
                                                                                                 </select>
