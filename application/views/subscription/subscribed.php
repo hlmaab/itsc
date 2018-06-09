@@ -5,18 +5,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!--<![endif]-->
 
     <head>
-		
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="shortcut icon" href="http://itsc.ust.hk/sites/itscprod.sites.ust.hk/files/itsc-icon.png" type="image/png">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Software Licensing &amp; Distribution | ITSC</title>
         <!-- Call bootstrap.css before $scripts to resolve @import conflict with respond.js -->
         <link rel="stylesheet" href="http://itsc.ust.hk/sites/all/themes/Porto/vendor/bootstrap/bootstrap.css">
-        
-        
-
         <style type="text/css" media="all">
             @import url("http://itsc.ust.hk/modules/system/system.base.css?ouij24");
             @import url("http://itsc.ust.hk/modules/system/system.menus.css?ouij24");
@@ -306,9 +300,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             //--><!]]>
         </script>
         <!-- Newly added javascript for homepage @Alice -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-        
+        <script type="text/javascript" src="<?php echo base_url('assets/js/software_home_page.js');?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/software_not_found.js');?>"></script>
 
         <!-- IE Fix for HTML5 Tags -->
         <!--[if lt IE 9]>
@@ -346,10 +339,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- End user defined CSS -->
     </head>
 
-    <body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-481 node-type-content-page i18n-en " style="" >
+    <body onload="redirect()" class="html not-front not-logged-in no-sidebars page-node page-node- page-node-481 node-type-content-page i18n-en " style="" >
 
         <div class="body">
-            <header id="header" data-plugin-options="{&quot;stickyEnabled&quot;: true, &quot;stickyEnableOnBoxed&quot;: true, &quot;stickyEnableOnMobile&quot;: true, &quot;stickyStartAt&quot;: 57, &quot;stickySetTop&quot;: &quot;-57px&quot;, &quot;stickyChangeLogo&quot;: true}" style="min-height: 23px; display: block;">
+            <header id="header" data-plugin-options="{&quot;stickyEnabled&quot;: true, &quot;stickyEnableOnBoxed&quot;: true, &quot;stickyEnableOnMobile&quot;: true, &quot;stickyStartAt&quot;: 57, &quot;stickySetTop&quot;: &quot;-57px&quot;, &quot;stickyChangeLogo&quot;: true}" style="min-height: 236px; display: block;">
                 <div class="header-body" style="top: 0px;">
                     <div class="header-container container">
 
@@ -427,7 +420,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <ul class="nav nav-pills nav-main" id="mainMenu">
                                     <li><a href="/" title="">Home</a></li>
                                     <li><a href="/about-itsc">About Us</a></li>
-                                    <li class="dropdown 4402 active"><a href="/services" title="" class="active-trail dropdown-toggle disabled">Service Catalog </a>
+                                    <li class="dropdown 4402 active"><a href="/services" title="" class="active-trail dropdown-toggle disabled">Service Catalog<i class="fa fa-caret-down"></i></a>
                                         <ul class="dropdown-menu">
                                             <li class="dropdown-submenu active"><a href="/services/general-it-services" class="active-trail">General IT Services<i class="fa fa-caret-down"></i></a>
                                                 <ul class="dropdown-menu">
@@ -628,7 +621,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown 4747"><a href="/it-policies-guidelines" class="dropdown-toggle disabled">IT Policies</i></a>
+                                    <li class="dropdown 4747"><a href="/it-policies-guidelines" class="dropdown-toggle disabled">IT Policies<i class="fa fa-caret-down"></i></a>
                                         <ul class="dropdown-menu">
                                             <li class="dropdown-submenu"><a href="/it-policies-guidelines" title="">General<i class="fa fa-caret-down"></i></a>
                                                 <ul class="dropdown-menu">
@@ -671,7 +664,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </ul>
                                     </li>
                                     <li><a href="/cyber-security" title="">Cybersecurity</a></li>
-                                    <li class="dropdown 4798"><a href="/publications" title="" class="dropdown-toggle disabled">Publications</a>
+                                    <li class="dropdown 4798"><a href="/publications" title="" class="dropdown-toggle disabled">Publications<i class="fa fa-caret-down"></i></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="/publications/channel">Channel</a></li>
                                             <li><a href="/publications/university-communications-directory">University Communications Directory</a></li>
@@ -688,8 +681,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 
                 <!-- Newly added CSS for homepage @Alice -->
                 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/software_home_page.css');?>">
-                <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-
+                <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/software_not_found.css');?>">
             </header>
             <!-- end header -->
 
@@ -704,6 +696,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <li><a href="/">Home</a></li>
                                         <li><a href="/services">Service Catalog</a></li>
                                         <li><a href="/services/general-it-services">General IT Services</a></li>
+                                        <li><a href="/services/general-it-services/software_home_page">Software Licensing &amp; Distribution</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -717,388 +710,190 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </section>
 
-																		
-<div class="container">
-
-		<div class="row">
-			<div class="title-bar">ITSC Software Subscription Form</div>
-		</div>
-		<div class="row">
-			<div class="form-content">
-				<p>Please fill out the form below completely. Missing information will cause a delay in processing your request. Your form will be processed as quickly as possible.</p>
-	
-				<p class="form-title">General Information</p>
-	
-				<div class="form-input-content">
-					<div class="form-horizontal">
-						<div class="row">
-							<label class="col-md-2">Dept/Office<span class="field-mandatory">*</span></label>
-							<div class="col-md-4"><input type="text" class="form-control" /></div>
-						</div>
-						<div class="row">
-							<label class="col-md-2">Requested By<span class="field-mandatory">*</span></label>
-							<div class="col-md-4"><input type="text" class="form-control" /></div>
-						</div>
-						<div class="row">
-								<label class="col-md-2">Ext.<span class="field-mandatory">*</span></label>
-								<div class="col-md-4"><input type="text" class="form-control" /></div>
-							</div>
-						<div class="row">
-							<label class="col-md-2">Email<span class="field-mandatory">*</span></label>
-							<div class="col-md-4"><input type="text" class="form-control" /></div>
-						</div>
-						
-						<!--<div class="row">
-					
-							  <label class="col-md-2">Date In<span class="field-mandatory">*</span></label>
-							  <div class="col-md-3">
-								<div class='input-group date' id='dateIn'>
-									<input type='text' class="form-control" />
-									<span class="input-group-addon">
-										<span class="glyphicon glyphicon-calendar"></span>
-									</span>   
-								</div>
-							  </div>   
-								 
-						</div>-->
-					</div>	
-	
-				</div>		<!-- end of 1st section -->
-	
-				<p class="form-title">Software Details</p>
-	
-				<div class="form-input-content">
-					<div class="form-horizontal">
-						<!--<div class="row">
-							<div class="col-md-12">
-								<label class="radio-inline">
-								  <input type="radio" name="inlineRadioOptions2"> Course
-								</label>
-								<label class="radio-inline">
-								  <input type="radio" name="inlineRadioOptions2"> Research
-								</label>
-								<label class="radio-inline">
-								  <input type="radio" name="inlineRadioOptions2"> Activity
-								</label>
-								<label class="radio-inline">
-								  <input type="radio" name="inlineRadioOptions2"> Special <span class="field-mandatory">*</span>
-								</label>	
-							</div>					
-						</div>-->
-	
-						<div class="row">
-	
-							<label class="col-md-2">Software Name</label>
-							<div class="col-md-5"><input type="text" class="form-control" /></div>
-	
-							<label class="col-md-2">Version <span class="input-hints">(if available)</span></label>
-							<div class="col-md-3"><input type="text" class="form-control" /></div>		
-		   
-						</div>
-					   <!-- <div class="row">
-	
-							  <label class="col-md-2">Setup Date<span class="field-mandatory">*</span></label>
-		
-							  <div class="col-md-2">
-								<div class='input-group date' id='setupDate'>
-									<input type='text' class="form-control" />
-									<span class="input-group-addon">
-										<span class="glyphicon glyphicon-calendar"></span>
-									</span>   
-								</div>
-							  </div>
-							  <label class="col-md-2">Setup Time<span class="field-mandatory">*</span></label>
-							  <div class="col-md-2">
-								<div class='input-group date' id='setupTime'>
-									<input type='text' class="form-control" />
-									<span class="input-group-addon">
-										<span class="glyphicon glyphicon-time"></span>
-									</span>   
-								</div>
-							  </div>
-	
-							<label class="col-md-2">Setup Venue<span class="field-mandatory">*</span></label>
-							<div class="col-md-2"><input type="text" class="form-control" /></div>			        
-		  
-	
-						 </div>
-	
-						<div class="row">
-							  <label class="col-md-2">Dismantle Date<span class="field-mandatory">*</span></label>
-	
-								  <div class="col-md-2">
-									<div class='input-group date' id='dismantleDate'>
-										<input type='text' class="form-control" />
-										<span class="input-group-addon">
-											<span class="glyphicon glyphicon-calendar"></span>
-										</span>   
-									</div>
-								  </div>
-	
-								  <label class="col-md-2">Dismantle Time<span class="field-mandatory">*</span></label>
-								  <div class="col-md-2">
-									<div class='input-group date' id='dismantleTime'>
-										<input type='text' class="form-control" />
-										<span class="input-group-addon">
-											<span class="glyphicon glyphicon-time"></span>
-										</span>   
-									</div>
-	
-	
-							  </div>
-	
-	
-								<label class="col-md-2">Dismantle Venue<span class="field-mandatory">*</span></label>
-								<div class="col-md-2"><input type="text" class="form-control" /></div>			        
-	
-						 </div>	-->	 
-						
-	
-						 <div class="row">
-							<label class="col-md-2">Category</label>
-							 <div class="col-md-7">	
-								 
-								<label class="radio-inline">
-								  <input type="radio" name="inlineRadioOptions2"> Academic
-								</label>
-								<label class="radio-inline">
-								  <input type="radio" name="inlineRadioOptions2"> Office
-								</label>
-								<label class="radio-inline">
-										<input type="radio" name="inlineRadioOptions2"> Programming
-								</label>
-							 </div>
-						 </div>  
-	
-						 <div class="row">
-							<label class="col-md-2">Remarks</label>	
-							 <div class="col-md-7">
-											
-								<textarea class="form-control" rows="4"></textarea>  
-							 </div>
-						 </div> 
-	
-					   </div>
-				</div>	 <!-- end of 2nd section -->						
-				</br>
-				<button type="submit" class="btn btn-default">Submit</button>
-				<button type="submit" class="btn btn-reset">Reset</button>
-				</br>
-				</br>
-				<hr>
-				  <small>
-					  <p>Remarks</p>
-					  <ul>
-						  <li>Should you have any questions or need any assistance from us, please call our Service Desk at Ext. 6200 or email to <a href="#" class="text-alert">cchelp@ust.hk</a></li>
-					  </ul>
-				  </small>	 
-	
-			</div> <!-- end of form content" -->
-		</div>
-	
-		<div class="row">
-			<div class="footer">
-				<p>Copyright &copy; Information Technology Services Center, HKUST</p>
-			</div>
-		</div> <!-- end of footer -->
-	
-	</div> <!-- end of container -->
+                <div id="content" class="content full">
+                    <div class="container">
+                        <div class="row">
 
 
 
+                            <!-- subscription request sent @Alice -->
+                                                            
+                            <div class="col-md-12">
+                            <div id="software-not-found"><h4 >Your request has been sent.<h4></div>
+                            </div>
+                            <button type="button" class="btn btn-default">Back</button>
 
-                                                                  <!-- Original home page elements
-                                                                    <ul><li>
-                                                                          <a href="/services/general-it-services/procurement-licensing/download/">Application Setup Advisor</a></li>
-                                                                      <li>
-                                                                          <a href="/services/general-it-services/procurement-licensing/download-window-installer">Download Windows Installer</a></li>
-                                                                      <li>
-                                                                          <a href="/services/general-it-services/procurement-licensing/software-procurement/">Coordinated Purchase</a></li>
-                                                                      <li>
-                                                                          <a href="/services/general-it-services/procurement-licensing/loan-software-media/">Loan Software Media</a></li>
-                                                                      <li>
-                                                                          <a href="http://itsc.ust.hk/services/general-it-services/procurement-licensing/common-software-list">List of Common Software</a></li>
-                                                                  </ul></div></div><p></p>
-                                                                  
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-
-                                                    <div class="col-md-3">
-                                                        <div class="region region-sidebar-right">
-                                                            <hr>
-
-                                                            <div id="block-menu-menu-general-it-services" class="block block-menu">
-
-                                                                <h4>General IT Services</h4>
-
-                                                                <div class="content">
-                                                                    <ul class="menu">
-                                                                        <li class="first leaf"><a href="/services/general-it-services/user-account" title="">User Account</a></li>
-                                                                        <li class="leaf"><a href="/services/general-it-services/wifi" title="">Wi-Fi Access</a></li>
-                                                                        <li class="leaf"><a href="/services/general-it-services/communication-collaboration" title="">Productivity &amp; Collaboration Tools</a></li>
-                                                                        <li class="leaf"><a href="/services/general-it-services/portal" title="">Portal</a></li>
-                                                                        <li class="leaf active-trail"><a href="/services/general-it-services/procurement-licensing" title="" class="active-trail active">Software Licensing &amp; Distribution</a></li>
-                                                                        <li class="leaf"><a href="/services/general-it-services/looking-for-a-person-or-a-place" title="">Looking for a Person or a Place</a></li>
-                                                                        <li class="last leaf"><a href="/services/general-it-services/campus-accessibility" title="">Campus Accessibility</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>-->
+                                                              
 
 
-                                    <footer id="footer">
-                                        <div class="container main-footer">
-                                            <div class="row">
 
+                            <!--<div class="col-md-3">
+                                <div class="region region-sidebar-right">
 
-                                                <div class="col-md-3">
-                                                    <div class="region region-footer-1">
-                                                        <div class="region region-footer-1">
-                                                            <div class="region region-footer-1">
-                                                                <div id="block-block-44" class="block block-block">
+                                    <div id="block-menu-menu-general-it-services" class="block block-menu">
 
-                                                                    <h2>Consultation</h2>
+                                        <h4>General IT Services</h4>
 
-                                                                    <div class="content">
-                                                                        <ul class="list-unstyled">
-                                                                            <li><i class="icon icon-map-marker">&nbsp;</i><strong>Student Consultation</strong>
-                                                                                <ul style="list-style-type:none">
-                                                                                    <li style="margin-left:-25px">Barn B (Rm 1101),</li>
-                                                                                    <li style="margin-left:-25px">Academic Concourse</li>
-                                                                                    <li style="margin-left:-25px"><i class="icon icon-envelope">&nbsp;</i>&nbsp;<a href="mailto:cchelp@ust.hk">cchelp@ust.hk</a></li>
-                                                                                </ul>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-3">
-                                                    <div class="region region-footer-2">
-                                                        <div class="region region-footer-2">
-                                                            <div id="block-block-50" class="block block-block">
-
-
-                                                                <div class="content">
-                                                                    <ul class="list-unstyled">
-                                                                        <li>
-                                                                            <i class="icon icon-map-marker">&nbsp;</i><strong>Staff Consultation</strong>
-                                                                            <ul style="list-style-type:none">
-                                                                                <li style="margin-left:-25px">
-                                                                                    <a href="/services/user-consultation-and-training-services/consultation/itsc-service-desk">Service Desk</a>,&nbsp;Rm 2021, Lift 2</li>
-                                                                                <li style="margin-left:-25px">
-                                                                                    <i class="icon icon-phone">&nbsp;</i> 2358 6200</li>
-                                                                                <li style="margin-left:-25px">
-                                                                                    <i class="icon icon-envelope">&nbsp;</i>&nbsp;<a href="mailto:cchelp@ust.hk">cchelp@ust.hk</a></li>
-                                                                            </ul>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4">
-                                                    <div class="region region-footer-3">
-                                                        <div class="region region-footer-3">
-                                                            <div id="block-block-45" class="block block-block">
-
-                                                                <h2>Suggestion &amp; Complaints</h2>
-
-                                                                <div class="content">
-                                                                    <p><a href="mailto:cclisten@ust.hk">cclisten@ust.hk</a></p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-2">
-                                                    <div class="region region-footer-4">
-                                                        <div class="region region-footer-4">
-                                                            <div id="block-block-46" class="block block-block">
-
-                                                                <h2>FAQ</h2>
-
-                                                                <div class="content">
-                                                                    <p><a href="http://itsc.ust.hk/kb/" target="new">ITSC Knowledge Base</a></p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="footer-copyright">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-
-
-                                                    </div>
-                                                    <div class="col-md-6">
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </footer>
-
-                                </div>
-                                <script type="text/javascript" src="http://itsc.ust.hk/sites/all/themes/Porto/js/theme.js?ouij24"></script>
-                                <script type="text/javascript" src="http://itsc.ust.hk/sites/all/themes/Porto/js/views/view.home.js?ouij24"></script>
-                                <script type="text/javascript" src="http://itsc.ust.hk/sites/all/themes/Porto/js/theme.init.js?ouij24"></script><a class="scroll-to-top hidden-mobile" href="#"><i class="fa fa-chevron-up"></i></a>
-                                <script type="text/javascript" src="http://itsc.ust.hk/modules/statistics/statistics.js?ouij24"></script>
-
-
-                                <div id="cboxOverlay" style="display: none;"></div>
-                                <div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;">
-                                    <div id="cboxWrapper">
-                                        <div>
-                                            <div id="cboxTopLeft" style="float: left;"></div>
-                                            <div id="cboxTopCenter" style="float: left;"></div>
-                                            <div id="cboxTopRight" style="float: left;"></div>
-                                        </div>
-                                        <div style="clear: left;">
-                                            <div id="cboxMiddleLeft" style="float: left;"></div>
-                                            <div id="cboxContent" style="float: left;">
-                                                <div id="cboxTitle" style="float: left;"></div>
-                                                <div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button>
-                                                <div id="cboxLoadingOverlay" style="float: left;"></div>
-                                                <div id="cboxLoadingGraphic" style="float: left;"></div>
-                                            </div>
-                                            <div id="cboxMiddleRight" style="float: left;"></div>
-                                        </div>
-                                        <div style="clear: left;">
-                                            <div id="cboxBottomLeft" style="float: left;"></div>
-                                            <div id="cboxBottomCenter" style="float: left;"></div>
-                                            <div id="cboxBottomRight" style="float: left;"></div>
+                                        <div class="content">
+                                            <ul class="menu">
+                                                <li class="first leaf"><a href="/services/general-it-services/user-account" title="">User Account</a></li>
+                                                <li class="leaf"><a href="/services/general-it-services/wifi" title="">Wi-Fi Access</a></li>
+                                                <li class="leaf"><a href="/services/general-it-services/communication-collaboration" title="">Productivity &amp; Collaboration Tools</a></li>
+                                                <li class="leaf"><a href="/services/general-it-services/portal" title="">Portal</a></li>
+                                                <li class="leaf active-trail"><a href="/services/general-it-services/procurement-licensing" title="" class="active-trail active">Software Licensing &amp; Distribution</a></li>
+                                                <li class="leaf"><a href="/services/general-it-services/looking-for-a-person-or-a-place" title="">Looking for a Person or a Place</a></li>
+                                                <li class="last leaf"><a href="/services/general-it-services/campus-accessibility" title="">Campus Accessibility</a></li>
+                                            </ul>
                                         </div>
                                     </div>
-                                    <div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div>
                                 </div>
+                            </div>-->
 
-                                <!--@Alice-->
-                                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-                                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-                                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <footer id="footer">
+                <div class="container main-footer">
+                    <div class="row">
+
+
+                        <div class="col-md-3">
+                            <div class="region region-footer-1">
+                                <div class="region region-footer-1">
+                                    <div class="region region-footer-1">
+                                        <div id="block-block-44" class="block block-block">
+
+                                            <h2>Consultation</h2>
+
+                                            <div class="content">
+                                                <ul class="list-unstyled">
+                                                    <li><i class="icon icon-map-marker">&nbsp;</i><strong>Student Consultation</strong>
+                                                        <ul style="list-style-type:none">
+                                                            <li style="margin-left:-25px">Barn B (Rm 1101),</li>
+                                                            <li style="margin-left:-25px">Academic Concourse</li>
+                                                            <li style="margin-left:-25px"><i class="icon icon-envelope">&nbsp;</i>&nbsp;<a href="mailto:cchelp@ust.hk">cchelp@ust.hk</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="region region-footer-2">
+                                <div class="region region-footer-2">
+                                    <div id="block-block-50" class="block block-block">
+
+
+                                        <div class="content">
+                                            <ul class="list-unstyled">
+                                                <li>
+                                                    <i class="icon icon-map-marker">&nbsp;</i><strong>Staff Consultation</strong>
+                                                    <ul style="list-style-type:none">
+                                                        <li style="margin-left:-25px">
+                                                            <a href="/services/user-consultation-and-training-services/consultation/itsc-service-desk">Service Desk</a>,&nbsp;Rm 2021, Lift 2</li>
+                                                        <li style="margin-left:-25px">
+                                                            <i class="icon icon-phone">&nbsp;</i> 2358 6200</li>
+                                                        <li style="margin-left:-25px">
+                                                            <i class="icon icon-envelope">&nbsp;</i>&nbsp;<a href="mailto:cchelp@ust.hk">cchelp@ust.hk</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="region region-footer-3">
+                                <div class="region region-footer-3">
+                                    <div id="block-block-45" class="block block-block">
+
+                                        <h2>Suggestion &amp; Complaints</h2>
+
+                                        <div class="content">
+                                            <p><a href="mailto:cclisten@ust.hk">cclisten@ust.hk</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="region region-footer-4">
+                                <div class="region region-footer-4">
+                                    <div id="block-block-46" class="block block-block">
+
+                                        <h2>FAQ</h2>
+
+                                        <div class="content">
+                                            <p><a href="http://itsc.ust.hk/kb/" target="new">ITSC Knowledge Base</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="footer-copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+
+
+                            </div>
+                            <div class="col-md-6">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+        <script type="text/javascript" src="http://itsc.ust.hk/sites/all/themes/Porto/js/theme.js?ouij24"></script>
+        <script type="text/javascript" src="http://itsc.ust.hk/sites/all/themes/Porto/js/views/view.home.js?ouij24"></script>
+        <script type="text/javascript" src="http://itsc.ust.hk/sites/all/themes/Porto/js/theme.init.js?ouij24"></script><a class="scroll-to-top hidden-mobile" href="#"><i class="fa fa-chevron-up"></i></a>
+        <script type="text/javascript" src="http://itsc.ust.hk/modules/statistics/statistics.js?ouij24"></script>
+
+
+        <div id="cboxOverlay" style="display: none;"></div>
+        <div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;">
+            <div id="cboxWrapper">
+                <div>
+                    <div id="cboxTopLeft" style="float: left;"></div>
+                    <div id="cboxTopCenter" style="float: left;"></div>
+                    <div id="cboxTopRight" style="float: left;"></div>
+                </div>
+                <div style="clear: left;">
+                    <div id="cboxMiddleLeft" style="float: left;"></div>
+                    <div id="cboxContent" style="float: left;">
+                        <div id="cboxTitle" style="float: left;"></div>
+                        <div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button>
+                        <div id="cboxLoadingOverlay" style="float: left;"></div>
+                        <div id="cboxLoadingGraphic" style="float: left;"></div>
+                    </div>
+                    <div id="cboxMiddleRight" style="float: left;"></div>
+                </div>
+                <div style="clear: left;">
+                    <div id="cboxBottomLeft" style="float: left;"></div>
+                    <div id="cboxBottomCenter" style="float: left;"></div>
+                    <div id="cboxBottomRight" style="float: left;"></div>
+                </div>
+            </div>
+            <div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div>
+        </div>
     </body>
 
     </html>
