@@ -15,12 +15,15 @@ Model: software
 Controller: Search
 View: Index, list, preList, result
 
+11-06-2018
+View: addSoftware/addSoftware.php
+
 *****************************
 *		File Changed		*
 *****************************
 13-03-2018 Wing
 
-route.php
+routes.php
 	$route['default_controller'] = "search";
 	-------------add-----------
 	$route['result/(:any)']='search/result/$1';
@@ -41,7 +44,16 @@ datatbase.php
 	'password' => '',
 	'database' => 'itsc',
 
+
+11-06-2018 Alice
+
+routes.php
+	$route['addSoftware'] = "user/addSoftware";
 	
+User.php
+	function addSoftare()
+	function insert()
+
 *****************************
 *	Privileged account		*
 *****************************
