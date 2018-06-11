@@ -364,17 +364,7 @@ class User extends BaseController
             $this->loadViews("loginHistory", $this->global, $data, NULL);
         }        
     }
-
-    /**
-     * @Alice
-     * This function loads the view of adding new software.
-    */
-    function addSoftware(){
-
-        $this->global['pageTitle'] = 'CodeInsect : Add New Software';
-        
-        $this->loadViews("addSoftware/addSoftware", $this->global, NULL , NULL);
-    }
+}
 }
 
 ?>
