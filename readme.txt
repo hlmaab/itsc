@@ -50,10 +50,6 @@ datatbase.php
 routes.php
 	$route['addSoftware'] = "user/addSoftware";
 	
-User.php
-	function addSoftare()
-	function insert()
-
 *****************************
 *	Privileged account		*
 *****************************
