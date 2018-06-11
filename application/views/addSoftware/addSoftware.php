@@ -1,31 +1,78 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
-<!DOCTYPE html>
-<html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
-  <script type="text/javascript" src="static/js/jquery.min.js"></script>
-  <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');?>">
+  <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
 
   <!-- Date Picker -->
-  <link rel="stylesheet" href="static/css/bootstrap-datetimepicker.min.css">
-  <script src="static/js/moment.js"></script>
-  <script src="static/js/bootstrap-datetimepicker.min.js"></script>
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap-datetimepicker.min.css');?>">
+  <script src="<?php echo base_url('assets/js/moment.js');?>"></script>
+  <script src="<?php echo base_url('assets/js/bootstrap-datetimepicker.min.js');?>"></script>
 
   <!-- ITSC custom made stylesheet & js, replace the href to the version on ilearn -->
-  <link rel="stylesheet" type="text/css" href="static/css/itscform.css">
-  <script type="text/javascript" src="static/js/itsc.js"></script>
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/itscform.css');?>">
+  <script type="text/javascript" src="<?php echo base_url('assets/js/itsc.js');?>"></script>
+
+
+
+<script type="text/javascript">
+
+// Date Picker
+    $(function () {
+        $('#dateIn').datetimepicker();
+        $('#dateIn').data("DateTimePicker").format('MM/DD/YYYY');
+
+        $('#setupDate').datetimepicker();
+		$('#setupDate').data("DateTimePicker").format('MM/DD/YYYY');
+
+		$('#setupTime').datetimepicker({
+                    format: 'HH:mm',
+                    defaultDate: "1/1/2001, 08:00",
+                    useCurrent: false,
+                    stepping: 15,
+					enabledHours: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+        });
+
+        $('#dismantleDate').datetimepicker();
+		$('#dismantleDate').data("DateTimePicker").format('MM/DD/YYYY');
+
+		$('#dismantleTime').datetimepicker({
+                    format: 'HH:mm',
+                    defaultDate: "1/1/2001, 08:00",
+                    useCurrent: false,
+                    stepping: 15,
+					enabledHours: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+        });
+    });
+</script>
 
 </head>
+
 <body>
-<div class="container">
-	<div class="row header-row">
-		<div class="logo"><img src="images\itsc-logo.png" alt="ITSC logo" class="img-responsive"></div>
-	</div>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <!--<section class="content-header">
+      <h1>
+        <i class="fa fa-tachometer" aria-hidden="true"></i> Add New Software(s)
+        <small>Control panel</small>
+      </h1>
+    </section>-->
+    
+    <section class="content">
+    
+
+    <section class="content-header">
+      <h1>
+        <i class="fa fa-users"></i> Software Management
+        <small>Add A New Software</small>
+      </h1>
+    </section>
+
+    <br>
 	<div class="row">
 		<div class="title-bar">ITSC Add Software Form</div>
 	</div>
@@ -37,25 +84,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 			<div class="form-input-content">
 				<div class="form-horizontal">
-					<div class="row">
-						<!-- <div class="col-md-12">
-							<label class="radio-inline">
-							  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> A/V Set-up
-							</label>
-							<label class="radio-inline">
-							  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Materials
-							</label>
-							<label class="radio-inline">
-							  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Other<span class="field-mandatory">*</span>
-							</label>
-						</div> -->
-					</div>
 
-            <!--@Alice call controller insert.php to handle inserting software to database-->
+            <!--@Alice 
+             call controller insert.php to handle inserting software to database
+            -->
             <form action="<?php echo base_url('controllers/insert.php'); ?>" method="post">                                                              
 
 				    <div class="row">
-			        	<label class="col-md-2">Name<span class="field-mandatory">*</span></label>
+			        	<label class="col-md-2">Software Name<span class="field-mandatory">*</span></label>
 			        	<div class="col-md-5"><input type="text" id="name" name="name" required class="form-control" /></div>
                 <label class="col-md-1">Version<span class="field-mandatory">*</span></label>
                 <div class="col-md-3"><input type="text" id="version" name="version" class="form-control" /></div>
@@ -140,12 +176,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <label class="col-md-1">Creator</label>
                     <div class="col-md-3"><input id="creator" name="creator" type="text" class="form-control" /></div>
 
-				    </div>
+            </div>
+            
             <div class="row">
 
                     <label class="col-md-2">Last Modified Date</label>
                     <div class="col-md-3">
-                      <div class='input-group date' id='dateIn'>
+                      <div class='input-group date' id='dateModified'>
                           <input type='text' id="last_modified_date" name="last_modified_date" class="form-control" />
                           <span class="input-group-addon">
                               <span class="glyphicon glyphicon-calendar"></span>
@@ -214,35 +251,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</div> <!-- end of footer -->
 
-</div> <!-- end of container -->
 
-<script type="text/javascript">
 
-// Date Picker
-    $(function () {
-        $('#dateIn').datetimepicker();
-        $('#dateIn').data("DateTimePicker").format('MM/DD/YYYY');
+    </section>
+</div>
 
-        $('#setupDate').datetimepicker();
-		$('#setupDate').data("DateTimePicker").format('MM/DD/YYYY');
-
-		$('#setupTime').datetimepicker({
-                    format: 'HH:mm',
-                    defaultDate: "1/1/2001, 08:00",
-                    useCurrent: false,
-                    stepping: 15,
-					enabledHours: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
-        });
-
-        $('#dismantleDate').datetimepicker();
-		$('#dismantleDate').data("DateTimePicker").format('MM/DD/YYYY');
-
-		$('#dismantleTime').datetimepicker({
-                    format: 'HH:mm',
-                    defaultDate: "1/1/2001, 08:00",
-                    useCurrent: false,
-                    stepping: 15,
-					enabledHours: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
-        });
-    });
-</script>
+</body>
