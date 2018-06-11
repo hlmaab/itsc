@@ -1,3 +1,8 @@
+**Files changed for trying to add new software:** 
+- config/routes.php
+- controllers/User.php (added 2 new functions)
+- views/addSoftware/addSoftware.php
+
 # Admin Panel - User Management using CodeIgniter
 **Admin Panel - User Management Demo using CodeIgniter + AdminLTE Bootstrap Theme**
 
