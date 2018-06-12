@@ -17,8 +17,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/itscform.css');?>">
   <script type="text/javascript" src="<?php echo base_url('assets/js/itsc.js');?>"></script>
 
-
-
 <script type="text/javascript">
 
 // Date Picker
@@ -88,7 +86,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!--@Alice 
              call controller insert.php to handle inserting software to database
             -->
-            <form action="<?php echo base_url('controllers/insert.php'); ?>" method="post">                                                              
+                                                          
 
 				    <div class="row">
 			        	<label class="col-md-2">Software Name<span class="field-mandatory">*</span></label>
@@ -135,7 +133,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="col-md-1"></div>
 
                 <label class="col-md-1">Memory<span class="field-mandatory">*</span></label>
-                <div class="col-md-3"><input type="text" class="form-control" /></div>
+                <div class="col-md-3"><input id="memory" type="text" class="form-control" /></div>
 
             </div>
             <div class="row">
@@ -228,7 +226,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 			</br>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default" onclick="post();">Submit</button>
             <button type="submit" class="btn btn-reset">Reset</button>
             </br>
 	        </br>
@@ -257,3 +255,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 
 </body>
+
+
+<script type="text/javascript" charset="utf-8">
+
+    /** @Alice This function concatenates all form attributes and send to controller. */
+    function post(){
+      var new_data = "name=" + $('#name').val()
+              + "version=" + $('#version').val()
+              + "location=" + $('#location').val()
+              + "category="+ $('#category').val()
+              + "information=" + $('#information').val()
+              + "img=" + $('#img').val()
+              + "hardware_requirement=" + $('#hardware_requirement').val()
+              + "language=" + $('#language').val()
+              + "platform=" + $('#platform').val()
+              + "id=" + $('#id').val()
+              + "processor=" + $('#processor').val()
+              + "memory=" + $('#memory').val()
+              + "supplier=" + $('#supplier').val()
+              + "support_by=" + $('#support_by').val()
+              + "support_url=" + $('#support_url').val()
+              + "download_url=" + $('#download_url').val()
+              + "fee=" + $('#fee').val()
+              + "created_date="+ $('#created_date').val()
+              + "creator="+ $('#creator').val()
+              + "last_modified_date="+ $('#last_modified_date').val()
+              + "last_modifier=" + $('#last_modifier').val()
+              + "setup_time="+ $('#setup_time').val()
+              + "setup_instruction="+ $('#setup_instruction').val()
+              + "troubleshooting="+ $('#troubleshooting').val()
+              + "remark="+ $('#remark').val() ;
+
+    $.post('Insert.php', { new_data: new_data});       
+   
+</script>
