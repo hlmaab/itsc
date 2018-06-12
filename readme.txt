@@ -44,11 +44,6 @@ datatbase.php
 	'password' => '',
 	'database' => 'itsc',
 
-
-11-06-2018 Alice
-
-routes.php
-	$route['addSoftware'] = "user/addSoftware";
 	
 *****************************
 *	Privileged account		*
