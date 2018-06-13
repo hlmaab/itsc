@@ -86,7 +86,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!--@Alice 
              call controller insert.php to handle inserting software to database
             -->
-                                                          
+                                          
 
 				    <div class="row">
 			        	<label class="col-md-2">Software Name<span class="field-mandatory">*</span></label>
@@ -241,6 +241,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           	</small> -->
     </form>
 		</div> <!-- end of form content" -->
+    
 	</div>
 
 	<div class="row">
@@ -261,7 +262,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     /** @Alice This function concatenates all form attributes and send to controller. */
     function post(){
-      var new_data = "name=" + $('#name').val()
+      var form_data = "name=" + $('#name').val()
               + "version=" + $('#version').val()
               + "location=" + $('#location').val()
               + "category="+ $('#category').val()
@@ -287,6 +288,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               + "troubleshooting="+ $('#troubleshooting').val()
               + "remark="+ $('#remark').val() ;
 
-    $.post('Insert.php', { new_data: new_data});       
-   
+    $.post('insert.php', { new_data: form_data});       
+      
 </script>

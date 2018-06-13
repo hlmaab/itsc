@@ -365,6 +365,6 @@ class User extends BaseController
         }        
     }
 }
-}
+
 
 ?>
