@@ -1,39 +1,39 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+* @Alice 
+* Model for inserting new software
+* */
 class Insert_model extends CI_MODEL
 {
 	function __construct() {
 		parent::__construct();
 	}
-
-	function get_count($name=NULL)
-	{
-		if($name!=NULL)
-			$this->db->like('name',$name);
-		$result=$this->db->get('software');
-		return $result->num_rows();
-	}
-	function get_software($name=NULL,$page, $segment)
-	{
-		if($name!=NULL)
-			$this->db->like('name',$name);
-		$this->db->limit($page, $segment);
-		$query=$this->db->get('software');
-		$result=$query->result_array();
-		
-		return $result;
-	}
 	
-	function get_list($db){
-		$result=$this->db->get($db);
-		return $result->result_array();
-	}
-
-	/**
-	 * @Alice */
+	// Inserting data in Table(s_info) of Database(itsc) 
 	function form_insert($data){
-		// Inserting in Table(s_info) of Database(itsc)
-		$this->db->insert('s_info', $data);
+
+		// split new_data by "&"	
+		$pieces = explode("&", $data['new_data']);																	
+		$sqlpiece = array();
+
+		for ($i = 0; $i < count($pieces); $i++)
+		{
+			$attribute = strtok($pieces[$i], '=');
+
+			// check if the attributes in table match the form fields
+			if ($this->db->field_exists( $attribute, 's_name_test')){								
+
+				/** 
+				 * split pieces by "=" , 1st element is attribute in db, 2nd element is value
+				 * e.g. name=Win becomes 'name'=> "Win"
+				*/
+				$sqlpiece += [ $attribute => substr($pieces[$i], strrpos($pieces[$i],'=') + 1)];
+
+			}
+		}
+
+		$this->db->insert('s_name_test', $sqlpiece);
 	}
 
 }

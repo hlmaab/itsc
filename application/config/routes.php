@@ -94,7 +94,7 @@ $route['login-history/(:num)/(:num)'] = "user/loginHistoy/$1/$2";
 
 /**
 * @Alice
-* call Infomation controller for inserting new software
+* for inserting new software
 */
 $route['addSoftware'] = "insert";
 

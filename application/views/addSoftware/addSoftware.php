@@ -226,7 +226,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 			</br>
-            <button type="submit" class="btn btn-default" onclick="post();">Submit</button>
+            <button type="submit" id="submit" class="btn btn-default" onclick="post();">Submit</button>
             <button type="submit" class="btn btn-reset">Reset</button>
             </br>
 	        </br>
@@ -260,34 +260,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <script type="text/javascript" charset="utf-8">
 
-    /** @Alice This function concatenates all form attributes and send to controller. */
+    /** @Alice 
+    * This function concatenates all form attributes and send to controller. 
+    */
     function post(){
       var form_data = "name=" + $('#name').val()
-              + "version=" + $('#version').val()
-              + "location=" + $('#location').val()
-              + "category="+ $('#category').val()
-              + "information=" + $('#information').val()
-              + "img=" + $('#img').val()
-              + "hardware_requirement=" + $('#hardware_requirement').val()
-              + "language=" + $('#language').val()
-              + "platform=" + $('#platform').val()
-              + "id=" + $('#id').val()
-              + "processor=" + $('#processor').val()
-              + "memory=" + $('#memory').val()
-              + "supplier=" + $('#supplier').val()
-              + "support_by=" + $('#support_by').val()
-              + "support_url=" + $('#support_url').val()
-              + "download_url=" + $('#download_url').val()
-              + "fee=" + $('#fee').val()
-              + "created_date="+ $('#created_date').val()
-              + "creator="+ $('#creator').val()
-              + "last_modified_date="+ $('#last_modified_date').val()
-              + "last_modifier=" + $('#last_modifier').val()
-              + "setup_time="+ $('#setup_time').val()
-              + "setup_instruction="+ $('#setup_instruction').val()
-              + "troubleshooting="+ $('#troubleshooting').val()
-              + "remark="+ $('#remark').val() ;
+              + "&version=" + $('#version').val()
+              + "&location=" + $('#location').val()
+              + "&category="+ $('#category').val()
+              + "&information=" + $('#information').val()
+              + "&img=" + $('#img').val()
+              + "&hardware_requirement=" + $('#hardware_requirement').val()
+              + "&language=" + $('#language').val()
+              + "&platform=" + $('#platform').val()
+              + "&id=" + $('#id').val()
+              + "&processor=" + $('#processor').val()
+              + "&memory=" + $('#memory').val()
+              + "&supplier=" + $('#supplier').val()
+              + "&support_by=" + $('#support_by').val()
+              + "&support_url=" + $('#support_url').val()
+              + "&download_url=" + $('#download_url').val()
+              + "&ee=" + $('#fee').val()
+              + "&created_date="+ $('#created_date').val()
+              + "&creator="+ $('#creator').val()
+              + "&last_modified_date="+ $('#last_modified_date').val()
+              + "&last_modifier=" + $('#last_modifier').val()
+              + "&setup_time="+ $('#setup_time').val()
+              + "&setup_instruction="+ $('#setup_instruction').val()
+              + "&troubleshooting="+ $('#troubleshooting').val()
+              + "&remark="+ $('#remark').val() ;
 
-    $.post('insert.php', { new_data: form_data});       
+        var name = "Alice";
+        alert(form_data);
+
+        $.post('insert/insertData', { new_data : form_data});   
+    }
       
 </script>
