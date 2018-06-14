@@ -17,37 +17,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/itscform.css');?>">
   <script type="text/javascript" src="<?php echo base_url('assets/js/itsc.js');?>"></script>
 
-<script type="text/javascript">
-
-// Date Picker
-    $(function () {
-        $('#dateIn').datetimepicker();
-        $('#dateIn').data("DateTimePicker").format('MM/DD/YYYY');
-
-        $('#setupDate').datetimepicker();
-		$('#setupDate').data("DateTimePicker").format('MM/DD/YYYY');
-
-		$('#setupTime').datetimepicker({
-                    format: 'HH:mm',
-                    defaultDate: "1/1/2001, 08:00",
-                    useCurrent: false,
-                    stepping: 15,
-					enabledHours: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
-        });
-
-        $('#dismantleDate').datetimepicker();
-		$('#dismantleDate').data("DateTimePicker").format('MM/DD/YYYY');
-
-		$('#dismantleTime').datetimepicker({
-                    format: 'HH:mm',
-                    defaultDate: "1/1/2001, 08:00",
-                    useCurrent: false,
-                    stepping: 15,
-					enabledHours: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
-        });
-    });
-</script>
-
 </head>
 
 <body>
@@ -160,7 +129,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	              		<label class="col-md-2">Date Created</label>
 	              		<div class="col-md-3">
-	                		<div class='input-group date' id='dateIn'>
+	                		<div class='input-group date' id='dateCreated' name='dateCreated'>
 	                    		<input type='text' id="created_date" name="created_date" class="form-control" />
 	                    		<span class="input-group-addon">
 	                        		<span class="glyphicon glyphicon-calendar"></span>
@@ -180,7 +149,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                     <label class="col-md-2">Last Modified Date</label>
                     <div class="col-md-3">
-                      <div class='input-group date' id='dateModified'>
+                      <div class='input-group date' id='dateModified' name='dateModified'>
                           <input type='text' id="last_modified_date" name="last_modified_date" class="form-control" />
                           <span class="input-group-addon">
                               <span class="glyphicon glyphicon-calendar"></span>
@@ -256,6 +225,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 
 </body>
+
+<script type="text/javascript">
+
+// Date Picker
+    $(function () {
+        $('#dateCreated').datetimepicker();
+        $('#dateCreated').data("DateTimePicker").format('MM/DD/YYYY');   
+        
+        $('#dateModified').datetimepicker();
+        $('#dateModified').data("DateTimePicker").format('MM/DD/YYYY');           			
+    });
+</script>
 
 
 <script type="text/javascript" charset="utf-8">
