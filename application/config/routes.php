@@ -96,7 +96,7 @@ $route['login-history/(:num)/(:num)'] = "user/loginHistoy/$1/$2";
 * @Alice
 * for inserting new software
 */
-$route['addSoftware'] = "insert";
+$route['insert'] = "insert";
 
 $route['forgotPassword'] = "login/forgotPassword";
 $route['resetPasswordUser'] = "login/resetPasswordUser";

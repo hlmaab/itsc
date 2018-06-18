@@ -448,49 +448,7 @@ label {
     font-size: 12px;    
 }
 
-.btn {
-    border: none;
-    border-radius: 2px;
-    padding: 5px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-}
 
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus {
-  outline: none;
-}
-
-
-.btn-default {
-    background-color: #1C70C4;
-    color: #FFFFFF;
-}
-
-
-.btn-default:hover {
-    background-color: #3289e2;    
-    color: #FFFFFF;    
-}
-
-.btn-default:active, .btn-default.active.focus,.btn-default.active:focus,.btn-default.active:hover,.btn-default:active.focus,
-.btn-default:active:focus, .btn-default:active:hover{
-    background-color: #3289e2;    
-    color: #FFFFFF;    
-}
-
-
-
-.btn-default:focus {
-    background-color: #1C70C4;    
-    color: #FFFFFF;    
-}
 
 .btn-danger {
 	background-color: #B22C00;

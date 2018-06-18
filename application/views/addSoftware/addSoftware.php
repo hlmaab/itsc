@@ -3,10 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');?>">
   <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
 
   <!-- Date Picker -->
   <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap-datetimepicker.min.css');?>">
@@ -15,7 +12,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <!-- ITSC custom made stylesheet & js, replace the href to the version on ilearn -->
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/itscform.css');?>">
-  <script type="text/javascript" src="<?php echo base_url('assets/js/itsc.js');?>"></script>
 
 </head>
 
@@ -40,90 +36,103 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </section>
 
     <br>
+    <div class="row">
+          <p>Error:</p>
+          <p><?php echo validation_errors(); ?></p>
+    </div>
+    
+
+
+  <?php echo form_open('insert');?>
 	<div class="row">
 		<div class="title-bar">ITSC Add Software Form</div>
 	</div>
 	<div class="row">
 		<div class="form-content">
 			<!-- <p>Please fill out the form below completely. Missing information will cause a delay in processing your request. Your form will be processed as quickly as possible. All requests should be submitted at least 2 days and less than 2 months in advance of the event. Otherwise, we may not be able to accommodate the requests.</p> -->
-      
-
 
 			<div class="form-input-content">
 				<div class="form-horizontal">
 
             <!--@Alice 
              call controller insert.php to handle inserting software to database
-            -->
-                                          
-
+            -->                                
+            <div class="row">
+                <label><b>General Information</b></label>
+            </div>
 				    <div class="row">
-			        	<label class="col-md-2">Software Name<span class="field-mandatory">*</span></label>
-			        	<div class="col-md-5"><input type="text" id="name" name="name" required class="form-control" /></div>
-                <label class="col-md-1">Version<span class="field-mandatory">*</span></label>
-                <div class="col-md-3"><input type="text" id="version" name="version" class="form-control" /></div>
+                <label class="col-md-2">Software ID<span class="field-mandatory">*</span></label>
+                <div class="col-md-3"><input type="text" id="id" name="id" class="form-control" /></div>
+            </div>
+            <div class="row">
+                <label class="col-md-2">Software Name<span class="field-mandatory">*</span></label>
+			        	<div class="col-md-4"><input type="text" id="sname" name="sname" class="form-control" /></div>
+                <label class="col-md-1">Version</label>
+                <div class="col-md-4"><input type="text" id="version" name="version" class="form-control" /></div>
             </div>
             <div class="row">
               <label class="col-md-2">Location<span class="field-mandatory">*</span></label>
-              <div class="col-md-5"><input type="text" id="location" name="location" required class="form-control" /></div>
+              <div class="col-md-4"><input type="text" id="location" name="location" class="form-control" /></div>
               <label class="col-md-1">Category<span class="field-mandatory">*</span></label>
-              <div class="col-md-3"><input type="text" id="category" name="category" class="form-control" /></div>
+              <div class="col-md-4"><input type="text" id="category" name="category" class="form-control" /></div>
           </div>
             <div class="row">
-                  <label class="col-md-2">Information<span class="field-mandatory">*</span></label>
-                  <div class="col-md-5"><textarea id="information" name="information" class="form-control" rows="2"></textarea></div>
-                  <label class="col-md-1">Software Icon<span class="field-mandatory">*</span></label>
-                  <div class="col-md-3"><input id="img" name="img" type="file" class="form-control-file"></div>
+                <label class="col-md-2">Language<span class="field-mandatory">*</span></label>
+                  <div class="col-md-4">
+                    <select class="form-control" id="language" name="language">
+                      <option>US English</option>
+                      <option>UK English</option>
+                      <option>Chinese</option>
+                      <option>French</option>
+                      <option>Spanish</option>
+                    </select>
+                  </div>
+                  <label class="col-md-2">Software Icon<span class="field-mandatory">*</span></label>
+                  <div class="col-md-4"><input id="img" name="img" type="file" class="form-control-file"></div>
             </div>
+
+
             <div class="row">
-              <label class="col-md-2">Hardware Requirements<span class="field-mandatory">*</span></label>
-              <div class="col-md-5"><textarea id="hardware_requirement" name="hardware_requirement" class="form-control" rows="2"></textarea></div>
-              <label class="col-md-1">Language<span class="field-mandatory">*</span></label>
-              <div class="col-md-3">
-                <select class="form-control" required id="language" name="language">
-                  <option>US English</option>
-                  <option>UK English</option>
-                  <option>Chinese</option>
-                  <option>French</option>
-                  <option>Spanish</option>
-                </select>
-              </div>
+                <label><b>Other Information</b></label>
             </div>
             <div class="row">
               <label class="col-md-2">Platform<span class="field-mandatory">*</span></label>
-              <div class="col-md-5"><textarea id="platform" name="platform" class="form-control" rows="2"></textarea></div>
-              <label class="col-md-1">ID<span class="field-mandatory">*</span></label>
-              <div class="col-md-1"><input type="text" id="id" name="id" class="form-control" /></div>
+              <div class="col-md-4"><textarea id="platform" name="platform" class="form-control" rows="2"></textarea></div>
+              
+              <label class="col-md-1">Information</label>
+              <div class="col-md-4"><textarea id="information" name="information" class="form-control" rows="2"></textarea></div>
             </div>
             <div class="row">
-                <label class="col-md-2">Processor<span class="field-mandatory">*</span></label>
-                <div class="col-md-3"><input id="processor" name="processor" type="text" class="form-control" /></div>
-                <label class="col-md-1"></label>
-                <div class="col-md-1"></div>
+                <label class="col-md-2">Processor</label>
+                <div class="col-md-4"><input id="processor" name="processor" type="text" class="form-control" /></div>
 
-                <label class="col-md-1">Memory<span class="field-mandatory">*</span></label>
-                <div class="col-md-3"><input id="memory" type="text" class="form-control" /></div>
+                <label class="col-md-1">Memory</label>
+                <div class="col-md-4"><input id="memory" type="text" class="form-control" /></div>
 
+            </div>
+            <div class="row">
+              <label class="col-md-2">Hardware Requirements</label>
+              <div class="col-md-4"><textarea id="hardware_requirement" name="hardware_requirement" class="form-control" rows="2"></textarea></div>
             </div>
             <div class="row">
                 <label class="col-md-2">Supplier</label>
-                <div class="col-md-5"><input id="supplier" name="supplier" type="text" required class="form-control" /></div>
+                <div class="col-md-5"><input id="supplier" name="supplier" type="text" class="form-control" /></div>
             </div>
             <div class="row">
                 <label class="col-md-2">Support By</label>
-                <div class="col-md-5"><input id="support_by" name="support_by" type="text" required class="form-control" /></div>
+                <div class="col-md-5"><input id="support_by" name="support_by" type="text" class="form-control" /></div>
             </div>
             <div class="row">
                 <label class="col-md-2">Support URL</label>
-                <div class="col-md-5"><input id="support_url" name="support_url" type="url" required class="form-control" /></div>
+                <div class="col-md-5"><input id="support_url" name="support_url" type="url" class="form-control" /></div>
             </div>
             <div class="row">
                 <label class="col-md-2">Download URL</label>
-                <div class="col-md-5"><input type="url" id="download_url" name="download_url" required class="form-control" /></div>
+                <div class="col-md-5"><input type="url" id="download_url" name="download_url" class="form-control" /></div>
             </div>
             <div class="row">
               <label class="col-md-2">Fee</label>
-              <div class="col-md-5"><input type="url" id="fee" name="fee" required class="form-control" /></div>
+              <div class="col-md-5"><input type="url" id="fee" name="fee" class="form-control" /></div>
           </div>
 				    <div class="row">
 
@@ -138,9 +147,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	              		</div>
 
                     <label class="col-md-1"></label>
-    				        <div class="col-md-1"></div>
 
-                    <label class="col-md-1">Creator</label>
+                    <label class="col-md-2">Creator</label>
                     <div class="col-md-3"><input id="creator" name="creator" type="text" class="form-control" /></div>
 
             </div>
@@ -158,15 +166,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
 
                     <label class="col-md-1"></label>
-                    <div class="col-md-1"></div>
 
-                    <label class="col-md-1">Last Modified By</label>
+                    <label class="col-md-2">Last Modified By</label>
                     <div class="col-md-3"><input id="last_modifier" name="last_modifier" type="text" class="form-control" /></div>
 
             </div>
             <div class="row">
                 <label class="col-md-2">Setup Time</label>
-                <div class="col-md-5"><input type="text" id="setup_time" name="setup_time" required class="form-control" /></div>
+                <div class="col-md-5"><input type="text" id="setup_time" name="setup_time"
+                 class="form-control" /></div>
             </div>
             <div class="row">
               <div class="col-md-7">
@@ -194,9 +202,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-			</br>
-            <button type="submit" id="submit" class="btn btn-default" onclick="post();">Submit</button>
-            <button type="submit" class="btn btn-reset">Reset</button>
+      </br>
+            <input id="test" name="test" type="hidden"></input>
+            <button type="submit" id="submit" class="btn btn-primary" value="Submit" onclick="post();">Submit</button>
+            <!--<button type="submit" id="reset" class="btn btn-reset"value="Reset" >Reset</button>-->
             </br>
 	        </br>
 	        <!-- <hr> -->
@@ -207,7 +216,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           			<li>Please arrange with FMO Moving Team for transporting of large or heavy A/V equipment (speakers, Televisions, etc) from ITSC Service Desk to the event venue.</li>
           			<li>Should you have any questions or need any assistance from us, please call our Service Desk at Ext. 6200 or email to <a href="#" class="text-alert">cchelp@ust.hk</a></li>
           		</ul>
-          	</small> -->
+            </small> -->
+
+            <!--hidden field-->
     </form>
 		</div> <!-- end of form content" -->
     
@@ -232,7 +243,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $(function () {
         $('#dateCreated').datetimepicker();
         $('#dateCreated').data("DateTimePicker").format('MM/DD/YYYY');   
-        
+
         $('#dateModified').datetimepicker();
         $('#dateModified').data("DateTimePicker").format('MM/DD/YYYY');           			
     });
@@ -245,7 +256,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     * This function concatenates all form attributes and send to controller. 
     */
     function post(){
-      var form_data = "name=" + $('#name').val()
+      var form_data = "sname=" + $('#sname').val()
               + "&version=" + $('#version').val()
               + "&location=" + $('#location').val()
               + "&category="+ $('#category').val()
@@ -271,10 +282,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               + "&troubleshooting="+ $('#troubleshooting').val()
               + "&remark="+ $('#remark').val() ;
 
-        var name = "Alice";
+        //for debugging
         alert(form_data);
 
-        $.post('insert/insertData', { new_data : form_data});   
+        //$.post('insert/insertData', { new_data : form_data});   
+        $.post('insert', { new_data : form_data});   
+        //document.getElementByID("test").value = form_data;
     }
       
 </script>

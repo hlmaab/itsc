@@ -19,6 +19,7 @@ class Insert_model extends CI_MODEL
 
 		for ($i = 0; $i < count($pieces); $i++)
 		{
+			// get attribute name
 			$attribute = strtok($pieces[$i], '=');
 
 			// check if the attributes in table match the form fields
@@ -27,13 +28,19 @@ class Insert_model extends CI_MODEL
 				/** 
 				 * split pieces by "=" , 1st element is attribute in db, 2nd element is value
 				 * e.g. name=Win becomes 'name'=> "Win"
-				*/
+				 * append to $sqlpiece array
+				 * */
 				$sqlpiece += [ $attribute => substr($pieces[$i], strrpos($pieces[$i],'=') + 1)];
 
 			}
 		}
 
-		$this->db->insert('s_name_test', $sqlpiece);
+		$name = ['sname' => 'Windows'];
+		$name += ['version' => '4.0'];
+
+
+		$this->db->insert('s_name_test', $sqlpiece); 
+
 	}
 
 }
