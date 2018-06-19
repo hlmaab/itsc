@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <div class="content-wrapper">
     <section class="content">
-        <section class="content-header">
+        <section class="content-header">  
         <h1>
             <i class="fa fa-users"></i> Software Management
             <small>Add A New Software</small>

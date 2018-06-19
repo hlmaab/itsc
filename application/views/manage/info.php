@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-xs-12 text-right">
                 <div class="form-group">
-                    <a class="btn btn-primary" href="<?php echo base_url().'insert/'; ?>"><i class="fa fa-plus"></i> Add New</a>
+                    <a class="btn btn-primary" href="<?php echo base_url().'information/addNewSoftware/'; ?>"><i class="fa fa-plus"></i> Add New</a>
                 </div>
             </div>
         </div>
@@ -36,6 +36,7 @@
                       <th>No.</th>
                       <th>Name</th>
                       <th>Category</th>
+                      <th>Location</th>
                       <th class="text-center">Actions</th>
                     </tr>
                     <?php
@@ -48,9 +49,11 @@
                     <tr>
                       <td><?php echo $count++; ?></td>
                       <td><?php echo $record['name']; ?></td>
+                      <td><?php echo $record['category'] ?></td>
+                      <td><?php echo $record['location'] ?></td>
                       <td class="text-center">
                           <a class="btn btn-sm btn-primary" href="<?=base_url().'login-history/'; ?>" title="Login history"><i class="fa fa-history"></i></a> | 
-                          <a class="btn btn-sm btn-info" href="<?php echo base_url().'editOld/'; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
+                          <a class="btn btn-sm btn-info" href="<?php echo base_url().'information/editOldSoftware/'.$record['id']; ?>" title="Edit Software"><i class="fa fa-pencil"></i></a>
                           <a class="btn btn-sm btn-danger deleteUser" href="#" data-userid="<?php echo 1; ?>" title="Delete"><i class="fa fa-trash"></i></a>
                       </td>
                     </tr>

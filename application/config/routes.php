@@ -65,7 +65,16 @@ $route['item/(:any)']='search/item/$1';
 $route['cias']='user';
 $route['manage']='information/info';
 $route['manage/(:num)']='information/info/$1';
-$route['addSoftware']='information/info/addSoftware';
+//$route['addSoftware']='information/info/addSoftware';
+
+/**
+* @Alice
+* for inserting new software
+*/
+$route['insert'] = "information/addNewSoftware";
+$route['editSoftware'] = "information/editSoftware";
+$route['editOldSoftware'] = "information/editOldSoftware";
+$route['editOldSoftware/(:num)'] = "information/editOldSoftware/$1";
 
 $route['welcome']='welcome';
 
@@ -91,12 +100,6 @@ $route['checkEmailExists'] = "user/checkEmailExists";
 $route['login-history'] = "user/loginHistoy";
 $route['login-history/(:num)'] = "user/loginHistoy/$1";
 $route['login-history/(:num)/(:num)'] = "user/loginHistoy/$1/$2";
-
-/**
-* @Alice
-* for inserting new software
-*/
-$route['insert'] = "insert";
 
 $route['forgotPassword'] = "login/forgotPassword";
 $route['resetPasswordUser'] = "login/resetPasswordUser";

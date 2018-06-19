@@ -40,7 +40,7 @@ class Insert_model extends CI_MODEL
 
 
 		$this->db->insert('s_name_test', $sqlpiece); 
-
+		return TRUE;
 	}
 
 }
