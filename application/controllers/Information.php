@@ -60,6 +60,7 @@ class Information extends BaseController
     }*/
 
     /**
+     * @Alice
      * This function is used to load the add new software form
      */
     function addNew()
@@ -80,6 +81,7 @@ class Information extends BaseController
     }
 
     /**
+     * @Alice
      * This function is used to add new software to the database
      */
     function addNewSoftware()
