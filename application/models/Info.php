@@ -6,7 +6,7 @@ class Info extends CI_MODEL
 	{
 		if($name!=NULL)
 			$this->db->like('name',$name);
-		$result=$this->db->get('software');
+		$result=$this->db->get('s_info');
 		return $result->num_rows();
 	}
 	function get_software($name=NULL,$page, $segment)
@@ -14,7 +14,7 @@ class Info extends CI_MODEL
 		if($name!=NULL)
 			$this->db->like('name',$name);
 		$this->db->limit($page, $segment);
-		$query=$this->db->get('software');
+		$query=$this->db->get('s_info');
 		$result=$query->result_array();
 		
 		return $result;

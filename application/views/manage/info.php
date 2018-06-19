@@ -2,7 +2,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-users"></i> User Management
+        <i class="fa fa-users"></i> Software Management
         <small>Add, Edit, Delete</small>
       </h1>
     </section>
@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-xs-12 text-right">
                 <div class="form-group">
-                    <a class="btn btn-primary" href="<?php echo base_url(); ?>addSoftware"><i class="fa fa-plus"></i> Add New</a>
+                    <a class="btn btn-primary" href="<?php echo base_url().'insert/'; ?>"><i class="fa fa-plus"></i> Add New</a>
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Users List</h3>
+                    <h3 class="box-title">Software List</h3>
                     <div class="box-tools">
                         <form action="<?php echo base_url() ?>manage" method="GET" id="searchList">
                             <div class="input-group">
@@ -35,6 +35,7 @@
                     <tr>
                       <th>No.</th>
                       <th>Name</th>
+                      <th>Category</th>
                       <th class="text-center">Actions</th>
                     </tr>
                     <?php
