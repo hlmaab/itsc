@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <section class="content">
         <section class="content-header">  
         <h1>
-            <i class="fa fa-users"></i> Software Management
+            <i class="fa fa-clipboard"></i> Software Management
             <small>Add A New Software</small>
         </h1>
         </section>

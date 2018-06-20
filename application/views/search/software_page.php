@@ -717,11 +717,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="row">
 
                             <!-- Software Logo -->
-                            <div class="software-logo">
-                                <img src="<php echo $result['img'];?>">
+                            <div class="container">
+                                <div class="software-logo">
+                                    <img id="logo" src="<?php echo base_url($result['img']);?>">
+                                </div>
                             </div>
-
-
+                            <br>
                             <!-- Table for descriptions -->
 
                             <div class="description-table">   
