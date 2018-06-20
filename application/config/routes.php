@@ -75,6 +75,7 @@ $route['insert'] = "information/addNewSoftware";
 $route['editSoftware'] = "information/editSoftware";
 $route['editOldSoftware'] = "information/editOldSoftware";
 $route['editOldSoftware/(:num)'] = "information/editOldSoftware/$1";
+$route['deleteSoftware'] = "information/deleteSoftware";
 
 $route['welcome']='welcome';
 

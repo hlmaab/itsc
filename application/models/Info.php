@@ -17,6 +17,8 @@ class Info extends CI_MODEL
      */
 	function get_software($name=NULL,$page, $segment)
 	{
+        //only get the software that is not deleted in the system
+        $this->db->where('is_deleted',0);                              
 		if($name!=NULL)
 			$this->db->like('name',$name);
 		$this->db->limit($page, $segment);
@@ -64,4 +66,18 @@ class Info extends CI_MODEL
         
         return TRUE;
     }
+
+    /**
+     * This function is used to delete the software information
+     * @param number $userId : This is software id
+     * @return boolean $result : TRUE / FALSE
+     */
+    function delete_Software($id, $softwareInfo)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('s_info', $softwareInfo);
+        
+        return $this->db->affected_rows();
+    }
+
 }

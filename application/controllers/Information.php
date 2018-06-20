@@ -63,7 +63,7 @@ class Information extends BaseController
      * @Alice
      * This function is used to load the add new software form
      */
-    function addNew()
+    function addNewForm()
     {
         if($this->isAdmin() == TRUE)
         {
@@ -100,7 +100,7 @@ class Information extends BaseController
             
             if($this->form_validation->run() == FALSE)
             {
-                $this->addNew();
+                $this->addNewForm();
             }
             else
             {
@@ -119,7 +119,7 @@ class Information extends BaseController
                 }
                 else
                 {
-                    $this->session->set_flashdata('error', 'User creation failed');
+                    $this->session->set_flashdata('error', 'Software creation failed');
                 }
                 
                 
@@ -202,6 +202,29 @@ class Information extends BaseController
             }
         }
     }
+
+    /**
+     * This function is used to delete the software using its id
+     * @return boolean $result : TRUE / FALSE
+     */
+    function deleteSoftware()
+    {
+        if($this->isAdmin() == TRUE)
+        {
+            echo(json_encode(array('status'=>'access')));
+        }
+        else
+        {
+            $id = $this->input->post('id');
+            $softwareInfo = array('is_deleted'=>1);
+            
+            $result = $this->info->delete_Software($id, $softwareInfo);
+            
+            if ($result > 0) { echo(json_encode(array('status'=>TRUE))); }
+            else { echo(json_encode(array('status'=>FALSE))); }
+        }
+    }
+    
 
     /**
      * Page not found : error 404

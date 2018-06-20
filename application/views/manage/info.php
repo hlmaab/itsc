@@ -54,7 +54,7 @@
                       <td class="text-center">
                           <a class="btn btn-sm btn-primary" href="<?=base_url().'login-history/'; ?>" title="Login history"><i class="fa fa-history"></i></a> | 
                           <a class="btn btn-sm btn-info" href="<?php echo base_url().'information/editOldSoftware/'.$record['id']; ?>" title="Edit Software"><i class="fa fa-pencil"></i></a>
-                          <a class="btn btn-sm btn-danger deleteUser" href="#" data-userid="<?php echo 1; ?>" title="Delete"><i class="fa fa-trash"></i></a>
+                          <a class="btn btn-sm btn-danger deleteSoftware" href="#" data-id="<?php echo $record['id']; ?>" title="Delete"><i class="fa fa-trash"></i></a>
                       </td>
                     </tr>
                     <?php

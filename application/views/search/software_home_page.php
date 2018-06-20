@@ -756,7 +756,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                             
                                                             <div class="col-md-12">
                                                             <?php echo form_open('keyword',array('method'=>'get')); ?>
-                                                            
+                                                                
                                                                     <div class="input-group " id="adv-search">
                                                                         
                                                                         <div class="input-group-btn input-group-lg">
@@ -767,7 +767,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                                                         <form class="form-horizontal" role="form">
                                                                                             <div class="form-group">
                                                                                                 <label for="location-filter">Location</label>
-                                                                                                <select class="form-control" name="selectedLocation">                           <!--return variable: selectedLocation-->
+                                                                                                <select class="form-control" name="selectedLocation" onchange="show()">                           <!--return variable: selectedLocation-->
                                                                                                     <option value="All" selected>All</option>
                                                                                                     <option value="Barn A" >Barn A</option>
                                                                                                     <option value="Barn B">Barn B</option>
@@ -778,7 +778,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                                                             </div>
                                                                                             <div class="form-group">
                                                                                                 <label for="cateogry-filter" >Cateogry</label> 
-                                                                                                    <select class="form-control"  name="selectedCategory">                      <!--return variable: selectedCategory-->
+                                                                                                    <select class="form-control"  name="selectedCategory" onchange="show()">                      <!--return variable: selectedCategory-->
                                                                                                         <option value="All" selected>All</option>
                                                                                                         <option value="Common software">Common software</option>
                                                                                                         <option value="Academic">Academic</option>
