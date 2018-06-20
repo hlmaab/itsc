@@ -26,6 +26,7 @@ class Software extends CI_Model{
 		$query=$this->db->select('s_info.name, s_info.img, s_detail.information,s_detail.version,s_detail.subscribe');
 		$query=$this->db->from('s_info');
 		$query=$this->db->join('s_detail','s_info.name=s_detail.name');
+		$query=$this->db->where('s_info.name', $name);
 		$query=$this->db->get();
 		return $query->row_array();
 	}
