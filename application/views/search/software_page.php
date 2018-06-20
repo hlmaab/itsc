@@ -698,7 +698,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <li><a href="/">Home</a></li>
                                         <li><a href="/services">Service Catalog</a></li>
                                         <li><a href="/services/general-it-services">General IT Services</a></li>
-                                        <li><a href="/services/general-it-services/software_home_page">Software Licensing &amp; Distribution</a></li>
+                                        <li><a href="<?php echo base_url();?>">Software Licensing &amp; Distribution</a></li>
                                     </ul>
                                 </div>
                             </div>

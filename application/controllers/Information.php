@@ -13,7 +13,7 @@ class Information extends BaseController
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('info');
+        $this->load->model('info_model');
         $this->isLoggedIn();   
     }
     
@@ -27,10 +27,10 @@ class Information extends BaseController
 		
 		$this->load->library('pagination');
         $data['searchText']=$this->security->xss_clean($this->input->GET('searchText'));
-        $count = $this->info->get_software_count($data['searchText']);
+        $count = $this->info_model->get_software_count($data['searchText']);
 		$returns = $this->paginationCompress ( "manage/", $count, 10 );
 		
-        $data['result']=$this->info->get_software($data['searchText'],$returns["page"], $returns["segment"]);
+        $data['result']=$this->info_model->get_software($data['searchText'],$returns["page"], $returns["segment"]);
         //$data['result']=$this->info->get_list('s_info');
 		
         $this->loadViews("/manage/info", $this->global, $data , NULL);
@@ -146,7 +146,7 @@ class Information extends BaseController
                 redirect('manage');
             }
             
-            $data['softwareInfo'] = $this->info->get_software_by_id($id);
+            $data['softwareInfo'] = $this->info_model->get_software_by_id($id);
             
             $this->global['pageTitle'] = 'CodeInsect : Edit Software';
             
@@ -187,7 +187,7 @@ class Information extends BaseController
                 $softwareInfo = array();
                 $softwareInfo = array('name'=>$name, 'location'=>$location, 'category'=>$category);
 
-                $result = $this->info->edit_Software($softwareInfo, $id);
+                $result = $this->info_model->edit_Software($softwareInfo, $id);
                 
                 if($result == true)
                 {
@@ -218,7 +218,7 @@ class Information extends BaseController
             $id = $this->input->post('id');
             $softwareInfo = array('is_deleted'=>1);
             
-            $result = $this->info->delete_Software($id, $softwareInfo);
+            $result = $this->info_model->delete_Software($id, $softwareInfo);
             
             if ($result > 0) { echo(json_encode(array('status'=>TRUE))); }
             else { echo(json_encode(array('status'=>FALSE))); }
