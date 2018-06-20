@@ -30,8 +30,6 @@ $this->input->post('name') <== The name refer to the 'name' attribute of the tex
 		public  function keyword()
 		{
 			$name=$this->input->get('name');
-			$selectedLocation=$this->input->get('selectedLocation');
-			$selectedCategory=$this->input->get('selectedCategory');
 			
 			$data['type']="Result";
 			if($name!="")
