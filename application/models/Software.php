@@ -41,9 +41,11 @@ class Software extends CI_Model{
 		$query=$this->db->where('name',$name);
 		$query=$this->db->get('s_type');
 		$query=$query->row_array();
+
 		$query=$this->db->like($query['type'],$name);
 		$this->db->where('is_deleted',0);
 		$query=$this->db->get('s_info');
+		
 		return $query->result_array();
 	}
 	
