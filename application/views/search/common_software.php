@@ -729,8 +729,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <?php foreach ($result as $item){
 											if($type=="category"|| $type=="location")
 												$item['link']=base_URL()."item/".$item['name'];
-											else
-												$item['link']=base_URL()."detail/".$item['name'];?>
+											else{
+                                                $item['link']=base_URL()."detail/".$item['name'];
+                                                $item['img']=base_URL().$item['img'];
+                                            }
+                                    ?>
                                         var temp = <?php echo json_encode($item) ?>;
                                         addCell(temp['name'],temp['link'],temp['img']);
                                     <?php } ?>
