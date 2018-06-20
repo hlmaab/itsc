@@ -698,7 +698,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <li><a href="/">Home</a></li>
                                         <li><a href="/services">Service Catalog</a></li>
                                         <li><a href="/services/general-it-services">General IT Services</a></li>
-                                        <li><a href="/services/general-it-services/software_home_page">Software Licensing &amp; Distribution</a></li>
+                                        <li><a href="<?php echo base_url();?>">Software Licensing &amp; Distribution</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -717,11 +717,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="row">
 
                             <!-- Software Logo -->
-                            <div class="software-logo">
-                                <img src="<php echo $result['img'];?>">
+                            <div class="container">
+                                <div class="software-logo">
+                                    <img id="logo" src="<?php echo base_url($result['img']);?>">
+                                </div>
                             </div>
-
-
+                            <br>
                             <!-- Table for descriptions -->
 
                             <div class="description-table">   

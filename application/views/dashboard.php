@@ -39,8 +39,8 @@
               <!-- small box -->
               <div class="small-box bg-yellow">
                 <div class="inner">
-                  <h3>44</h3>
-                  <p>New User</p>
+                  <h3><?php echo $user_count?></h3>
+                  <p>Users</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-person-add"></i>
@@ -61,6 +61,22 @@
                 <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
+
+                      <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-purple">
+                <div class="inner">
+                  <h3><?php echo $software_count?></h3>
+                  <p>Software</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-clipboard"></i>
+                </div>
+                <a href="<?php echo base_url(); ?>manage" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div><!-- ./col -->
           </div>
+          </div>
+
     </section>
 </div>

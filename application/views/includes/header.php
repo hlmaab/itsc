@@ -105,7 +105,7 @@
             </li>
             <li class="treeview">
               <a href="<?php echo base_url(); ?>manage" >
-                <i class="fa fa-plane"></i>
+                <i class="fa fa-clipboard"></i>
                 <span>Management</span>
               </a>
             </li>

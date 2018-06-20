@@ -18,6 +18,7 @@ class User extends BaseController
     {
         parent::__construct();
         $this->load->model('user_model');
+        $this->load->model('info_model');
         $this->isLoggedIn();   
     }
     
@@ -27,8 +28,10 @@ class User extends BaseController
     public function index()
     {
         $this->global['pageTitle'] = 'CodeInsect : Dashboard';
-        
-        $this->loadViews("dashboard", $this->global, NULL , NULL);
+        $data['user_count']=$this->user_model->userListingCount();
+        $data['software_count']=$this->info_model->get_software_count();
+
+        $this->loadViews("dashboard", $this->global, $data , NULL);
     }
     
     /**
@@ -365,6 +368,6 @@ class User extends BaseController
         }        
     }
 }
-}
+
 
 ?>
