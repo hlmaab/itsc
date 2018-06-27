@@ -95,8 +95,8 @@ class Information extends BaseController
             $this->load->library('form_validation');
             
             $this->form_validation->set_rules('name','Software Name','trim|required|max_length[100]');
-            $this->form_validation->set_rules('location','Location','trim|required|max_length[100]');
-            $this->form_validation->set_rules('category','Category','trim|required|max_length[100]');
+            $this->form_validation->set_rules('location','Location','trim|required|max_length[200]');
+            $this->form_validation->set_rules('category','Category','trim|required|max_length[200]');
             
             if($this->form_validation->run() == FALSE)
             {
@@ -104,18 +104,47 @@ class Information extends BaseController
             }
             else
             {
-                $data = $this->input->post('new_data');
-
-                $softwareInfo = array();
-                $softwareInfo = array('new_data'=>$data);
+                $name = $this->input->post('name');
+                $version = $this->input->post('version');
+                $location = $this->input->post('location');
+                $category = $this->input->post('category');
+                $information=$this->input->post('information');
+                $img =$this->input->post('img');
+                $hardware_requirement=$this->input->post('hardware_requirement');
+                $language=$this->input->post('language');
+                $platform=$this->input->post('platform');
+                $processor=$this->input->post('processor');
+                $memory=$this->input->post('memory');
+                $supplier=$this->input->post('supplier');
+                $support_by=$this->input->post('support_by');
+                $support_url=$this->input->post('support_url');
+                $download_url=$this->input->post('download_url');
+                $fee=$this->input->post('fee');
+                $creator=$this->input->post('creator');
+                $last_modified_date=$this->input->post('last_modified_date');
+                $last_modified_by=$this->input->post('last_modified_by');
+                $setup_time=$this->input->post('setup_time');
+                $setup_instruction=$this->input->post('setup_instruction');
+                $troubleshooting=$this->input->post('troubleshooting');
+                $remark=$this->input->post('remark');
+                $subscribe=$this->input->post('subscribe');
                 
-                $this->load->model('insert_model');
-                $result = $this->insert_model->form_insert($softwareInfo);
+                $softwareInfo = array();
+                $softwareInfo = array('name'=>$name, 'location'=>$location, 'version'=>$version, 'category'=>$category,
+                'information'=>$information, 'img'=>$img, 'hardware_requirement'=>$hardware_requirement,
+                'language'=>$language, 'platform'=>$platform, 'processor'=>$processor,
+                'memory'=>$memory, 'supplier'=>$supplier, 'support_by'=>$support_by,
+                'support_url'=>$support_url, 'download_url'=>$download_url, 'fee'=>$fee,
+                'creator'=>$creator, 'last_modified_date'=>$last_modified_date, 'last_modified_by'=>$last_modified_by,
+                'setup_time'=>$setup_time, 'setup_instruction'=>$setup_instruction, 'troubleshooting'=>$troubleshooting,
+                'remark'=>$remark, 'subscribe'=>$subscribe);
+
+                
+                $result = $this->info_model->add_Software($softwareInfo);
                 
                 if($result > 0)
                 {
-                    redirect('manage/addSoftwareSuccess');
-                    //$this->session->set_flashdata('success', 'New User created successfully');
+                    $this->loadViews("manage/addSoftwareSuccess", $this->global, NULL, NULL);
                 }
                 else
                 {
@@ -181,11 +210,39 @@ class Information extends BaseController
             else
             {
                 $name = $this->input->post('name');
+                $version = $this->input->post('version');
                 $location = $this->input->post('location');
                 $category = $this->input->post('category');
-                
+                $information=$this->input->post('information');
+                $img =$this->input->post('img');
+                $hardware_requirement=$this->input->post('hardware_requirement');
+                $language=$this->input->post('language');
+                $platform=$this->input->post('platform');
+                $processor=$this->input->post('processor');
+                $memory=$this->input->post('memory');
+                $supplier=$this->input->post('supplier');
+                $support_by=$this->input->post('support_by');
+                $support_url=$this->input->post('support_url');
+                $download_url=$this->input->post('download_url');
+                $fee=$this->input->post('fee');
+                $creator=$this->input->post('creator');
+                $last_modified_date=$this->input->post('last_modified_date');
+                $last_modified_by=$this->input->post('last_modified_by');
+                $setup_time=$this->input->post('setup_time');
+                $setup_instruction=$this->input->post('setup_instruction');
+                $troubleshooting=$this->input->post('troubleshooting');
+                $remark=$this->input->post('remark');
+                $subscribe=$this->input->post('subscribe');
+
                 $softwareInfo = array();
-                $softwareInfo = array('name'=>$name, 'location'=>$location, 'category'=>$category);
+                $softwareInfo = array('name'=>$name, 'location'=>$location, 'version'=>$version, 'category'=>$category,
+                'information'=>$information, 'img'=>$img, 'hardware_requirement'=>$hardware_requirement,
+                'language'=>$language, 'platform'=>$platform, 'processor'=>$processor,
+                'memory'=>$memory, 'supplier'=>$supplier, 'support_by'=>$support_by,
+                'support_url'=>$support_url, 'download_url'=>$download_url, 'fee'=>$fee,
+                'creator'=>$creator, 'last_modified_date'=>$last_modified_date, 'last_modified_by'=>$last_modified_by,
+                'setup_time'=>$setup_time, 'setup_instruction'=>$setup_instruction, 'troubleshooting'=>$troubleshooting,
+                'remark'=>$remark, 'subscribe'=>$subscribe);
 
                 $result = $this->info_model->edit_Software($softwareInfo, $id);
                 
