@@ -2,21 +2,18 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <head>
-
   <!-- Date Picker -->
   <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap-datetimepicker.min.css');?>">
   <script src="<?php echo base_url('assets/js/moment.js');?>"></script>
   <script src="<?php echo base_url('assets/js/bootstrap-datetimepicker.min.js');?>"></script>
+
   <!-- Select Picker Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
 
 <!-- Select Picker Latest compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 
 </head>
-
-<body>
-
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -30,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
         <div class="row">
             <!-- left column -->
-            <div class="col-md-10">
+            <div class="col-md-11">
               <!-- general form elements -->
                 
                 
@@ -39,57 +36,57 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="box-header">
                         <h3 class="box-title">Enter Software Details</h3>
                     </div><!-- /.box-header -->
-
-            
+                    <!-- form start -->
+                    
                     <form role="form" action="<?php echo base_url() ?>information/addNewSoftware" method="post" id="addSoftware" role="form">
-                      <div class="box-body">
-                      <div class="row">
-                        <div class="col-md-10">  
-                        <h4>General Information</h4>
-                        </div>
-                      </div>
-                      <br>
-                        <div class="row">
-                          <div class="col-md-6">                                
-                            <div class="form-group">
-                                <label for="name">Software Name<span class="field-mandatory">*</span></label>
-                                <input type="text" class="form-control" id="name" placeholder="Software Name" name="name" maxlength="100"> 
-                            </div>       
+                        <div class="box-body">
+                          <div class="row">
+                            <div class="col-md-10">  
+                            <h4>General Information</h4>
+                            </div>
                           </div>
-                          <div class="col-md-6">                                
-                            <div class="form-group">
-                                <label for="name">Version</label>
-                                <input type="text" class="form-control" id="version" placeholder="Version" name="version" maxlength="100"> 
-                            </div>       
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-6">                                
-                            <div class="form-group">
-                                <label for="name">Location<span class="field-mandatory">*</span></label>
-                                <select class="form-control selectpicker" id="location" name="location[]" multiple="multiple" size="5">
-                                  <option value="Barn A">Barn A</option>
-                                  <option value="Barn B">Barn B</option>
-                                  <option value="Room 4210">Room 4210</option>
-                                </select>
-                            </div>       
-                          </div>
-                          <div class="col-md-6">                                
-                            <div class="form-group">
-                                <label for="name">Category<span class="field-mandatory">*</span></label>
-                                <select class="form-control selectpicker" id="category" name="category[]" multiple="multiple" size="5">
-                                  <option value="Graphic">Graphic</option>
-                                  <option value="Programming">Programming</option>
-                                  <option value="Academic">Academic</option>
-                                </select> 
-                            </div>       
-                          </div>
-                        </div>
-                        <div class="row">
+                            <div class="row">
+                                <div class="col-md-6">                                
+                                    <div class="form-group">
+                                        <label for="name">Software Name<span class="field-mandatory">*</span></label>
+                                        <input type="text" class="form-control" id="name" placeholder="Software Name" name="name"  maxlength="100">  
+                                    </div>
+                                </div>
+                                <div class="col-md-6">                                
+                                  <div class="form-group">
+                                      <label for="name">Version</label>
+                                      <input type="text" class="form-control" id="version" placeholder="Version" name="version" maxlength="100"> 
+                                  </div>       
+                                </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">                                
+                                <div class="form-group">
+                                    <label for="name">Location<span class="field-mandatory">*</span></label>
+                                    <select class="form-control selectpicker" id="location" name="location[]" multiple="multiple" size="5">
+                                    <option value="Barn A">Barn A</option>
+                                    <option value="Barn B">Barn B</option>
+                                    <option value="Room 4210">Room 4210</option>
+                                    </select>
+                                </div>       
+                            </div>
+                            <div class="col-md-6">                                
+                                <div class="form-group">
+                                    <label for="name">Category<span class="field-mandatory">*</span></label>
+                                    <select class="form-control selectpicker" id="category" name="category[]" multiple="multiple" size="5">
+                                    <option value="Graphic">Graphic</option>
+                                    <option value="Programming">Programming</option>
+                                    <option value="Academic">Academic</option>
+                                    </select> 
+                                </div>       
+                            </div>
+                            </div>
+                        
+                            <div class="row">
                           <div class="col-md-6"> 
                             <div class="form-group">
                               <label for="language">Language</label>
-                                <select class="form-control selectpicker" id="language" name="language[]" multiple="multiple" size="5">
+                                <select class="form-control selectpicker" id="language" name="language[]"  multiple="multiple" size="5">
                                   <option value="English">English</option>
                                   <option value="Chinese">Chinese</option>
                                   <option value="French">French</option>
@@ -105,7 +102,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                           </div>
                       </div>
-
                       <div class="row">
                           <div class="col-md-6"> 
   
@@ -129,7 +125,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="col-md-6">  
                           <div class="form-group">
                             <label for="platforn">Platform</label>
-                            <textarea id="platform" name="platform" class="form-control" rows="4"></textarea>
+                            <textarea id="platform" name="platform" class="form-control" rows="4" ></textarea>
                           </div>
                           
                           <div class="form-group">
@@ -149,7 +145,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           <div class="col-md-6">                                
                             <div class="form-group">
                               <label for="memory">Memory</label>
-                              <input id="memory" type="text" class="form-control" />
+                              <input id="memory" type="text" class="form-control"/>
                             </div>       
                           </div>
                       </div>
@@ -202,8 +198,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <div class="row">
                           <div class="col-md-6">                                
                             <div class="form-group">
+                                <label for="created_date">Date Created</label>
+                                <div class='input-group date' id='dateCreated' name='dateCreated'>
+                                    <input type='text' id="created_date" name="created_date" class="form-control"  size="100"  />
+                                </div>
+                              </div>
+                            </div>       
+
+                          <div class="col-md-6">                                
+                            <div class="form-group">
                               <label for="creator">Creator</label>
-                              <input id="creator" name="creator" type="text" class="form-control" />
+                              <input id="creator" name="creator" type="text" class="form-control" size="100" />
                             </div>       
                           </div>
                       </div>
@@ -233,7 +238,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           <div class="col-md-6">                                
                             <div class="form-group">
                             <label for="setup_instruction">Setup Instructions</label>
-                              <textarea id="setup_instruction" name="setup_instruction" class="form-control" rows="6"></textarea>
+                              <textarea id="setup_instruction" name="setup_instruction" class="form-control" rows=""></textarea>
                              
                             </div>       
                           </div>
@@ -263,14 +268,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           </div>
                         </div>
 
-                    <div class="box-footer">
-                            <input type="submit" class="btn btn-primary" value="Submit"/>
+
+
+
+
+
+                        </div><!-- /.box-body -->
+    
+                        <div class="box-footer">
+                            <input type="submit" class="btn btn-primary" value="Submit" />
                             <input type="reset" class="btn btn-default" value="Reset" />
                         </div>
-                        </form>
+                    </form>
                 </div>
             </div>
-
             <div class="col-md-4">
                 <?php
                     $this->load->helper('form');
@@ -303,9 +314,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>    
     </section>
 </div>
-</body>
-
-<script src="<?php echo base_url(); ?>assets/js/addSoftware.js" type="text/javascript"></script>
 <script type="text/javascript">
 
 // Date Picker
@@ -314,26 +322,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $('#dateModified').data("DateTimePicker").format('MM/DD/YYYY');           			
     });
 </script>
-
-
-<script type="text/javascript" charset="utf-8">
-
-    // the selector will match all input controls of type :checkbox
-    // and attach a click event handler 
-    $("input:checkbox").on('click', function() {
-      // in the handler, 'this' refers to the box clicked on
-      var $box = $(this);
-      if ($box.is(":checked")) {
-        // the name of the box is retrieved using the .attr() method
-        // as it is assumed and expected to be immutable
-        var group = "input:checkbox[name='" + $box.attr("name") + "']";
-        // the checked state of the group/box on the other hand will change
-        // and the current value is retrieved using .prop() method
-        $(group).prop("checked", false);
-        $box.prop("checked", true);
-      } else {
-        $box.prop("checked", false);
-      }
-    });
-
-</script>
+<script src="<?php echo base_url(); ?>assets/js/addSoftware.js" type="text/javascript"></script>

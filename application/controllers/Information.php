@@ -95,8 +95,8 @@ class Information extends BaseController
             $this->load->library('form_validation');
             
             $this->form_validation->set_rules('name','Software Name','trim|required|max_length[100]');
-            $this->form_validation->set_rules('location','Location','trim|required|max_length[200]');
-            $this->form_validation->set_rules('category','Category','trim|required|max_length[200]');
+            $this->form_validation->set_rules('location[]','Location','trim|required|max_length[200]');
+            $this->form_validation->set_rules('category[]','Category','trim|required|max_length[200]');
             
             if($this->form_validation->run() == FALSE)
             {
@@ -106,12 +106,18 @@ class Information extends BaseController
             {
                 $name = $this->input->post('name');
                 $version = $this->input->post('version');
-                $location = $this->input->post('location');
-                $category = $this->input->post('category');
+                $location_input=array();
+                $location_input = $this->input->post('location');
+                    $location = implode(",",$location_input); 
+                $category_input=array();
+               $category_input = $this->input->post('category');
+                    $category = implode(",",$category_input); 
                 $information=$this->input->post('information');
                 $img =$this->input->post('img');
                 $hardware_requirement=$this->input->post('hardware_requirement');
-                $language=$this->input->post('language');
+                $language_input=array();
+                $language_input=$this->input->post('language');
+                    $language = implode(",",$language_input); 
                 $platform=$this->input->post('platform');
                 $processor=$this->input->post('processor');
                 $memory=$this->input->post('memory');

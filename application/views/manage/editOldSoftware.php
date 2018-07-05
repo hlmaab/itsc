@@ -1,7 +1,9 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 $id = '';
 $name = '';
+$version='';
 $location = '';
 $category = '';
 $information='';
@@ -32,6 +34,7 @@ if(!empty($softwareInfo))
     {
         $id = $uf->id;
         $name = $uf->name;
+        $version = $uf->version;
         $location = $uf->location;
         $category = $uf->category;
         $information=$uf->information;
@@ -99,6 +102,11 @@ if(!empty($softwareInfo))
                     
                     <form role="form" action="<?php echo base_url() ?>information/editSoftware" method="post" id="editSoftware" role="form">
                         <div class="box-body">
+                          <div class="row">
+                            <div class="col-md-10">  
+                            <h4>General Information</h4>
+                            </div>
+                          </div>
                             <div class="row">
                                 <div class="col-md-6">                                
                                     <div class="form-group">
@@ -106,7 +114,12 @@ if(!empty($softwareInfo))
                                         <input type="text" class="form-control" id="name" placeholder="Software Name" name="name" value="<?php echo $name; ?>" maxlength="100">
                                         <input type="hidden" value="<?php echo $id; ?>" name="id" id="id" />    
                                     </div>
-                                    
+                                </div>
+                                <div class="col-md-6">                                
+                                  <div class="form-group">
+                                      <label for="name">Version</label>
+                                      <input type="text" class="form-control" id="version" placeholder="Version" name="version" value="<?php echo $version; ?>"maxlength="100"> 
+                                  </div>       
                                 </div>
                             </div>
                             <div class="row">
@@ -153,7 +166,17 @@ if(!empty($softwareInfo))
                             </div>
                           </div>
                       </div>
-
+                      <div class="row">
+                          <div class="col-md-6"> 
+  
+                            <div class="form-group">
+                              <label for="subscrive">Able to Subscribe<span class="field-mandatory">*</span></label><br>
+                              <div class="col-md-3"><input type="checkbox" class="radio" id="subscribe" name="subscribe" class="form-control" value="1">Yes </div>
+                              <div class="col-md-3"><input type="checkbox" class="radio" id="subscribe" name="subscribe" class="form-control" value="0">No </div>
+                            </div>
+                          </div>
+                      </div>
+                      
                       <br>
                       <div class="row">
                         <div class="col-md-6">  
