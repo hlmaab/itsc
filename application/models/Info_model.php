@@ -137,7 +137,14 @@ class Info_model extends CI_MODEL
             }
 
             // insert new location/category if it is not exist in s_type table
-            if ($key=="location" || $key=="category"){
+            /*if ($key=="location" || $key=="category"){
+
+                $cats =  explode(", ", $value);
+                foreach($cats as $cat) {
+                    $cat = trim($cat);
+                    $categories .= "<category>" . $cat . "</category>\n";
+                }
+
                 $query = $this->db->like('name', $value);
                 $query = $this->db->get('s_type');
                 if ($query->num_rows()==0){
@@ -145,7 +152,7 @@ class Info_model extends CI_MODEL
                     $type += [ 'name' => $value, 'type'=>$key];
                     $this->db->insert('s_type', $type); 
                 }
-            }
+            }*/
         }
         $this->db->insert('s_info', $info); 
         $this->db->insert('s_detail', $detail); 

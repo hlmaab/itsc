@@ -39,18 +39,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             @import url("http://itsc.ust.hk/sites/all/modules/md_slider/css/md-slider.css?ouij24");
         </style>
         <style type="text/css" media="all">
-            < !--
+
             /*--><![CDATA[/*><!--*/
 
             /*]]>*/
 
-            -->
+
         </style>
         <style type="text/css" media="all">
             @import url("http://itsc.ust.hk/sites/all/modules/md_slider/css/md-slider-style.css?ouij24");
         </style>
         <style type="text/css" media="all">
-            < !--
+
             /*--><![CDATA[/*><!--*/
 
             @media (max-width:460px) {
@@ -61,7 +61,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             /*]]>*/
 
-            -->
         </style>
         <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" media="all">
         <style type="text/css" media="all">
@@ -755,32 +754,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                             <!-- Search bar for software @Alice -->
                                                             
                                                             <div class="col-md-12">
-                                                            <?php echo form_open('keyword',array('method'=>'get')); ?>
-                                                                
                                                                     <div class="input-group " id="adv-search">
                                                                         
                                                                         <div class="input-group-btn input-group-lg">
+                                                            <?php echo form_open('keyword',array('method'=>'get','id'=>'keyword')); ?>
                                                                             <div class="btn-group" role="group">
+                                                                                        <!--form class="form-horizontal" role="form"-->
+
                                                                                 <div class="dropdown dropdown-lg">
                                                                                 <button type="button" class="btn dropdown-toggle btn-lg more-icon" data-toggle="dropdown" aria-expanded="false" style="width: 100px; height: 34px; padding-top: 4px;"><span class="more-word">More</span><i class="fas fa-sort-down"></i></button>
                                                                                     <div class="dropdown-menu dropdown-menu-left" role="menu">
-                                                                                        <form class="form-horizontal" role="form">
                                                                                             <div class="form-group">
                                                                                                 <label for="location-filter">Location</label>
-                                                                                                <select class="form-control" name="selectedLocation" onchange="show()">                           <!--return variable: selectedLocation-->
-                                                                                                    <option value="All" selected>All</option>
+                                                                                                <select class="form-control do_not_close" name="selectedLocation">                           <!--return variable: selectedLocation-->
+                                                                                                    <option value="All" selected default>All</option>
                                                                                                     <option value="Barn A" >Barn A</option>
                                                                                                     <option value="Barn B">Barn B</option>
                                                                                                     <option value="Lab 4210">Lab 4210</option>
                                                                                                     <option value="Lab 4213">Lab 4213</option>
-                                                                                                    <option value="Lab 4214">Lab 4214</option>
                                                                                                 </select>
                                                                                             </div>
                                                                                             <div class="form-group">
                                                                                                 <label for="cateogry-filter" >Cateogry</label> 
-                                                                                                    <select class="form-control"  name="selectedCategory" onchange="show()">                      <!--return variable: selectedCategory-->
-                                                                                                        <option value="All" selected>All</option>
-                                                                                                        <option value="Common software">Common software</option>
+                                                                                                    <select class="form-control do_not_close"  name="selectedCategory">                      <!--return variable: selectedCategory-->
+                                                                                                        <option value="All" selected default>All</option>
+                                                                                                        <option value="Graphic">Graphic</option>
                                                                                                         <option value="Academic">Academic</option>
                                                                                                         <option value="Programming">Programming</option>
                                                                                                 </select>
@@ -791,16 +789,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                                                             </div> -->
                                                                                             
                                                                                         
-                                                                                        </form>
                                                                                     </div>
                                                                                 </div>
                                                                                 <input type="text" class="form-control" placeholder="Search for the software" name="name"/>             <!-- @Wing return the user input as variable "name" -->
-                                                                                <div class= "right-corner"><button type="submit" class="btn search-icon" style="height:34px"><i class="fas fa-search"></i>
-</button></div>
+ 
+                                                                              <button type="submit" class="btn search-icon" style="height:34px"><i class="fas fa-search"></i></button>
+                                                                                        </form>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                             
+
                                                              </div>
                                                             <p></p>
                                                             <!-- Buttons @Alice -->
@@ -838,7 +836,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                                           <a href="http://itsc.ust.hk/services/general-it-services/procurement-licensing/common-software-list">List of Common Software</a></li>
                                                                   </ul></div></div><p></p>
                                                                   -->
-                                                                  <?php echo form_close();?>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1018,6 +1015,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
                                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
                                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
-    </body>
+<script>
+$(document).ready(function(){
+  $('.do_not_close').on("click", function(e){
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script>
+								</body>
 
     </html>

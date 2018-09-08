@@ -32,7 +32,7 @@ class Software extends CI_Model{
 	
 	public function get_result($name)
 	{
-		$query=$this->db->select('s_info.name, s_info.img, s_detail.information,s_detail.version,s_detail.subscribe');
+		$query=$this->db->select('*');
 		$query=$this->db->from('s_info');
 		$query=$this->db->join('s_detail','s_info.id=s_detail.id');
 		$query=$this->db->where('s_info.name', $name);

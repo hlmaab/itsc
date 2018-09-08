@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $id = '';
 $name = '';
 $version='';
-$location = '';
+$location[] = '';
 $category = '';
 $information='';
 $img ='';
@@ -35,7 +35,7 @@ if(!empty($softwareInfo))
         $id = $uf->id;
         $name = $uf->name;
         $version = $uf->version;
-        $location = $uf->location;
+        $location[] = $uf->location;
         $category = $uf->category;
         $information=$uf->information;
         $img =$uf->img;
@@ -71,6 +71,7 @@ if(!empty($softwareInfo))
 
   <!-- Select Picker Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/form.css');?>">
 
 <!-- Select Picker Latest compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
@@ -84,7 +85,40 @@ if(!empty($softwareInfo))
         <small>Edit Software</small>
       </h1>
     </section>
-    
+    <!-- form start -->
+                    
+    <form role="form" action="<?php echo base_url() ?>information/editSoftware" method="post" id="editSoftware" role="form">
+    <div class="col-md-6">
+             <br>
+                <?php
+                    $this->load->helper('form');
+                    $error = $this->session->flashdata('error');
+                    if($error)
+                    {
+                ?>
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <?php echo $this->session->flashdata('error'); ?>                    
+                </div>
+                <?php } ?>
+                <?php  
+                    $success = $this->session->flashdata('success');
+                    if($success)
+                    {
+                ?>
+                <div class="alert alert-success alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <?php echo $this->session->flashdata('success'); ?>
+                </div>
+                <?php } ?>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php echo validation_errors('<div class="alert alert-danger alert-dismissable">', ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>'); ?>
+                    </div>
+                </div>
+            </div>
+            
     <section class="content">
     
         <div class="row">
@@ -98,9 +132,6 @@ if(!empty($softwareInfo))
                     <div class="box-header">
                         <h3 class="box-title">Edit Software Details</h3>
                     </div><!-- /.box-header -->
-                    <!-- form start -->
-                    
-                    <form role="form" action="<?php echo base_url() ?>information/editSoftware" method="post" id="editSoftware" role="form">
                         <div class="box-body">
                           <div class="row">
                             <div class="col-md-10">  
@@ -126,7 +157,7 @@ if(!empty($softwareInfo))
                             <div class="col-md-6">                                
                                 <div class="form-group">
                                     <label for="name">Location<span class="field-mandatory">*</span></label>
-                                    <select class="form-control selectpicker" id="location" name="location" multiple="multiple" size="5" value="<?php echo $location; ?>">
+                                    <select class="form-control selectpicker" id="location" name="location[]" multiple="multiple" size="5" value="<?php echo $location; ?>">
                                     <option value="Barn A">Barn A</option>
                                     <option value="Barn B">Barn B</option>
                                     <option value="Room 4210">Room 4210</option>
@@ -136,7 +167,7 @@ if(!empty($softwareInfo))
                             <div class="col-md-6">                                
                                 <div class="form-group">
                                     <label for="name">Category<span class="field-mandatory">*</span></label>
-                                    <select class="form-control selectpicker" id="category" name="category" multiple="multiple" size="5">
+                                    <select class="form-control selectpicker" id="category" name="category[]" multiple="multiple" size="5">
                                     <option value="Graphic">Graphic</option>
                                     <option value="Programming">Programming</option>
                                     <option value="Academic">Academic</option>
@@ -148,8 +179,8 @@ if(!empty($softwareInfo))
                             <div class="row">
                           <div class="col-md-6"> 
                             <div class="form-group">
-                              <label for="language">Language</label>
-                                <select class="form-control selectpicker" id="language" name="language"  multiple="multiple" size="5">
+                              <label for="language">Language<span class="field-mandatory">*</span></label>
+                                <select class="form-control selectpicker" id="language" name="language[]"  multiple="multiple" size="5">
                                   <option value="English">English</option>
                                   <option value="Chinese">Chinese</option>
                                   <option value="French">French</option>
@@ -383,7 +414,7 @@ if(!empty($softwareInfo))
 // Date Picker
     $(function () {
         $('#dateModified').datetimepicker();
-        $('#dateModified').data("DateTimePicker").format('MM/DD/YYYY');           			
+        $('#dateModified').data("DateTimePicker").format('DD/MM/YYYY');           			
     });
 </script>
 <script src="<?php echo base_url(); ?>assets/js/editSoftware.js" type="text/javascript"></script>

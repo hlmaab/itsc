@@ -39,18 +39,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             @import url("http://itsc.ust.hk/sites/all/modules/md_slider/css/md-slider.css?ouij24");
         </style>
         <style type="text/css" media="all">
-            < !--
+
             /*--><![CDATA[/*><!--*/
 
             /*]]>*/
 
-            -->
+
         </style>
         <style type="text/css" media="all">
             @import url("http://itsc.ust.hk/sites/all/modules/md_slider/css/md-slider-style.css?ouij24");
         </style>
         <style type="text/css" media="all">
-            < !--
+
             /*--><![CDATA[/*><!--*/
 
             @media (max-width:460px) {
@@ -61,7 +61,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             /*]]>*/
 
-            -->
         </style>
         <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" media="all">
         <style type="text/css" media="all">

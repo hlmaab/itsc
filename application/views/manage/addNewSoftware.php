@@ -9,6 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <!-- Select Picker Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/form.css');?>">
 
 <!-- Select Picker Latest compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
@@ -23,6 +24,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </h1>
     </section>
     
+    <!-- form start -->
+    <form role="form" action="<?php echo base_url() ?>information/addNewSoftware" method="post" id="addSoftware" role="form">
+            
+             <div class="col-md-6">
+             <br>
+                <?php
+                    $this->load->helper('form');
+                    $error = $this->session->flashdata('error');
+                    if($error)
+                    {
+                ?>
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <?php echo $this->session->flashdata('error'); ?>                    
+                </div>
+                <?php } ?>
+                <?php  
+                    $success = $this->session->flashdata('success');
+                    if($success)
+                    {
+                ?>
+                <div class="alert alert-success alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <?php echo $this->session->flashdata('success'); ?>
+                </div>
+                <?php } ?>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php echo validation_errors('<div class="alert alert-danger alert-dismissable">', ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>'); ?>
+                    </div>
+                </div>
+            </div>
+
     <section class="content">
     
         <div class="row">
@@ -36,12 +71,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="box-header">
                         <h3 class="box-title">Enter Software Details</h3>
                     </div><!-- /.box-header -->
-                    <!-- form start -->
-                    
-                    <form role="form" action="<?php echo base_url() ?>information/addNewSoftware" method="post" id="addSoftware" role="form">
+
                         <div class="box-body">
                           <div class="row">
-                            <div class="col-md-10">  
+                            <div class="col-md-6">  
                             <h4>General Information</h4>
                             </div>
                           </div>
@@ -85,7 +118,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="row">
                           <div class="col-md-6"> 
                             <div class="form-group">
-                              <label for="language">Language</label>
+                              <label for="language">Language<span class="field-mandatory">*</span></label>
                                 <select class="form-control selectpicker" id="language" name="language[]"  multiple="multiple" size="5">
                                   <option value="English">English</option>
                                   <option value="Chinese">Chinese</option>
@@ -282,35 +315,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </form>
                 </div>
             </div>
-            <div class="col-md-4">
-                <?php
-                    $this->load->helper('form');
-                    $error = $this->session->flashdata('error');
-                    if($error)
-                    {
-                ?>
-                <div class="alert alert-danger alert-dismissable">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <?php echo $this->session->flashdata('error'); ?>                    
-                </div>
-                <?php } ?>
-                <?php  
-                    $success = $this->session->flashdata('success');
-                    if($success)
-                    {
-                ?>
-                <div class="alert alert-success alert-dismissable">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <?php echo $this->session->flashdata('success'); ?>
-                </div>
-                <?php } ?>
-                
-                <div class="row">
-                    <div class="col-md-12">
-                        <?php echo validation_errors('<div class="alert alert-danger alert-dismissable">', ' <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>'); ?>
-                    </div>
-                </div>
-            </div>
         </div>    
     </section>
 </div>
@@ -319,7 +323,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // Date Picker
     $(function () {
         $('#dateModified').datetimepicker();
-        $('#dateModified').data("DateTimePicker").format('MM/DD/YYYY');           			
+        $('#dateModified').data("DateTimePicker").format('DD/MM/YYYY');           			
     });
 </script>
 <script src="<?php echo base_url(); ?>assets/js/addSoftware.js" type="text/javascript"></script>
