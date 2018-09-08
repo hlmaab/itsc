@@ -301,6 +301,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </script>
         <!-- Newly added javascript for homepage @Alice -->
  <!--        <script type="text/javascript" src="<?php echo base_url('assets/js/software_home_page.js');?>"></script> -->
+ <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 
 
         <!-- IE Fix for HTML5 Tags -->
@@ -729,14 +730,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                               <table class="table table-striped">
 
                                 <tbody class="table">
-                                  <tr>
-                                    <td class="left ">Description</td>
-                                    <td><?php echo $result['information'];?></td>
-                                  </tr>
-                                  <tr>
-                                    <td class="left">Version</td>
-                                    <td><?php echo $result['version'];?></td>
-                                  </tr>
+                            
+                                <?php foreach ($result as $key=>$item){
+                                    if($key!= "id"&&$key!= "img"&&$key!= "creator"&&$key!= "created_date"&&$key!= "last_modified_by" &&$key!= "last_modified_date"&&$key!= "is_deleted"&&$key!= "setup_time"&&$key!= "subscribe"){
+                                        echo"<tr>";
+                                            echo"<td>";
+                                            echo ucfirst(str_replace("_", " ", $key));
+                                        
+                                            echo"</td>";
+                                            echo"<td>" ;
+                                            echo"<td>";
+                                            echo $item;
+                                            echo"</td>";
+                                        echo"</tr>";  
+                                    }                     
+                                } ?>
                                 </tbody>
                               </table>
                             </div>
@@ -747,8 +755,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               
                                 <script type="text/javascript">
                                     var sub = "<?php echo $result['subscribe'];?>";
-                                    if (sub=='1')
+                                    if (sub=='1'){
                                         addSubscribeButton();
+                                    }
                                 </script>
         
                             

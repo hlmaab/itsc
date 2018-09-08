@@ -65,11 +65,10 @@ $route['item/(:any)']='search/item/$1';
 $route['cias']='user';
 $route['manage']='information/info';
 $route['manage/(:num)']='information/info/$1';
-//$route['addSoftware']='information/info/addSoftware';
 
 /**
 * @Alice
-* for inserting new software
+* for managing new software
 */
 $route['insert'] = "information/addNewSoftware";
 $route['editSoftware'] = "information/editSoftware";

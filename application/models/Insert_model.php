@@ -35,9 +35,6 @@ class Insert_model extends CI_MODEL
 			}
 		}
 
-		$name = ['sname' => 'Windows'];
-		$name += ['version' => '4.0'];
-
 
 		$this->db->insert('s_name_test', $sqlpiece); 
 		return TRUE;
