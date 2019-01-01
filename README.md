@@ -1,3 +1,5 @@
+# ITSC Software Licensing Page
+![image](https://github.com/hlmaab/itsc/blob/master/Screen%20Shot.png)
 
 # Admin Panel - User Management using CodeIgniter
 **Admin Panel - User Management Demo using CodeIgniter + AdminLTE Bootstrap Theme**
